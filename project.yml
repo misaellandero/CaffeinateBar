@@ -12,6 +12,8 @@ targets:
     platform: macOS
     sources:
       - CaffeinateBar
+    dependencies:
+      - sdk: IOKit.framework
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.local.CaffeinateBar

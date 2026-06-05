@@ -2,20 +2,25 @@ import SwiftUI
 
 struct MenuBarView: View {
     @EnvironmentObject var manager: CaffeinateManager
+    @AppStorage("settingsExpanded") private var settingsExpanded: Bool = false
 
     var body: some View {
-        VStack(spacing: 0) {
-            headerSection
-            Divider()
-            assertionsSection
-            Divider()
-            timeoutSection
-            Divider()
-            commandPreviewSection
-            Divider()
-            actionSection
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 0) {
+                headerSection
+                Divider()
+                assertionsSection
+                Divider()
+                timeoutSection
+                Divider()
+                commandPreviewSection
+                Divider()
+                settingsSection
+                Divider()
+                actionSection
+            }
         }
-        .frame(width: 290)
+        .frame(width: 290, height: settingsExpanded ? 530 : 320)
     }
 
     // MARK: - Header
@@ -141,6 +146,98 @@ struct MenuBarView: View {
         .background(Color(NSColor.controlBackgroundColor))
     }
 
+    // MARK: - Settings
+
+    private var settingsSection: some View {
+        VStack(spacing: 0) {
+            // Collapsible header
+            Button {
+                withAnimation(.easeInOut(duration: 0.18)) {
+                    settingsExpanded.toggle()
+                }
+            } label: {
+                HStack(spacing: 10) {
+                    Image(systemName: "gearshape")
+                        .frame(width: 18)
+                        .foregroundStyle(.secondary)
+                    Text("Settings")
+                        .font(.subheadline)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 10, weight: .semibold))
+                        .foregroundStyle(.tertiary)
+                        .rotationEffect(.degrees(settingsExpanded ? 90 : 0))
+                }
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+
+            if settingsExpanded {
+                VStack(spacing: 0) {
+                    Divider().padding(.horizontal, 14)
+
+                    SettingsRow(
+                        toggle: $manager.launchAtLogin,
+                        symbol: "power",
+                        title: "Launch at Login",
+                        info: "Automatically starts CaffeinateBar when you log in, so it's always ready in your menu bar without needing to open it manually."
+                    )
+                    SettingsRow(
+                        toggle: $manager.activateOnLaunch,
+                        symbol: "play.fill",
+                        title: "Activate on Launch",
+                        info: "Automatically enables Caffeinate every time the app starts. Great if you always want your Mac to stay awake as soon as you open it."
+                    )
+                    SettingsRow(
+                        toggle: $manager.leftClickToToggle,
+                        symbol: "cursorarrow.click",
+                        title: "Left Click to Toggle",
+                        info: "A single left-click on the menu bar icon will toggle Caffeinate on or off directly, instead of opening this settings window. Right-click still opens the window."
+                    )
+                    SettingsRow(
+                        toggle: $manager.globalHotkeyEnabled,
+                        symbol: "keyboard",
+                        title: "Global Shortcut  ⌥⌘K",
+                        info: "Press Option + Command + K from anywhere on your Mac to toggle Caffeinate on or off — even when this window is closed or another app is in focus."
+                    )
+                    SettingsRow(
+                        toggle: $manager.allowScreenToSleep,
+                        symbol: "moon",
+                        title: "Allow Screen to Sleep",
+                        info: "Lets the display turn off while still keeping your Mac awake in the background. Useful for overnight tasks — saves screen power but keeps the computer running."
+                    )
+                    SettingsRow(
+                        toggle: $manager.allowNotifications,
+                        symbol: "bell",
+                        title: "Show Notifications",
+                        info: "Sends a system notification whenever Caffeinate is turned on or off, so you always know the current state even when the menu bar is out of sight."
+                    )
+                    SettingsRow(
+                        toggle: $manager.colorIcon,
+                        symbol: "paintpalette",
+                        title: "Color Menu Bar Icon",
+                        info: "Displays the coffee cup icon in color — brown when active — instead of the standard black and white. Makes it easier to spot your caffeinate status at a glance."
+                    )
+                    SettingsRow(
+                        toggle: $manager.activateOnACPower,
+                        symbol: "bolt.fill",
+                        title: "Activate When Plugged In",
+                        info: "Automatically turns on Caffeinate whenever you connect your power adapter, so your Mac stays awake while charging without any manual steps."
+                    )
+                    SettingsRow(
+                        toggle: $manager.deactivateOnUnplug,
+                        symbol: "bolt.slash",
+                        title: "Deactivate When Unplugged",
+                        info: "Automatically turns off Caffeinate when you unplug the charger, letting your Mac sleep normally on battery to preserve power."
+                    )
+                }
+                .transition(.opacity)
+            }
+        }
+    }
+
     // MARK: - Action Buttons
 
     private var actionSection: some View {
@@ -257,6 +354,41 @@ private struct AssertionRow: View {
         .buttonStyle(.plain)
         .disabled(isLocked)
         .opacity(isLocked ? 0.5 : 1.0)
+    }
+}
+
+// MARK: - SettingsRow
+
+private struct SettingsRow: View {
+    @Binding var toggle: Bool
+    let symbol: String
+    let title: String
+    let info: String
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: symbol)
+                .frame(width: 18)
+                .foregroundStyle(.secondary)
+
+            HStack(spacing: 4) {
+                Text(title)
+                    .font(.subheadline)
+                Image(systemName: "info.circle")
+                    .font(.system(size: 10))
+                    .foregroundStyle(.tertiary)
+                    .help(info)
+            }
+
+            Spacer()
+
+            Toggle("", isOn: $toggle)
+                .toggleStyle(.switch)
+                .labelsHidden()
+                .scaleEffect(0.75)
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 6)
     }
 }
 

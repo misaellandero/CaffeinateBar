@@ -2,17 +2,11 @@ import SwiftUI
 
 @main
 struct CaffeinateBarApp: App {
-    @StateObject private var manager = CaffeinateManager()
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
-        MenuBarExtra {
-            MenuBarView()
-                .environmentObject(manager)
-        } label: {
-            let name = manager.isActive ? "cup.and.saucer.fill" : "cup.and.saucer"
-            Image(systemName: name)
-                .symbolRenderingMode(.hierarchical)
-        }
-        .menuBarExtraStyle(.window)
+        // All UI is managed via NSStatusItem in AppDelegate.
+        // This Settings scene prevents SwiftUI from opening any windows.
+        Settings { EmptyView() }
     }
 }

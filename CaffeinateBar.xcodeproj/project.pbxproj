@@ -8,19 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812503D72961ED483033783D /* CaffeinateManager.swift */; };
+		8631D1025512927D48E26BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70E580DECC6D93690EFD05 /* AppDelegate.swift */; };
 		CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */; };
 		D3D5ECF53AC9BA2CEB9C04E8 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918686C41373E3A6ED655E6 /* MenuBarView.swift */; };
+		D7A40CD5DA435831E79BFB5C /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */; };
+		E1099528E4EC3260233D8EE7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCEDE027E8543C98073BCE4 /* IOKit.framework */; };
 		E1F7DC538684416376E69DFA /* CaffeinateBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		044633F66D4C46BF4E78B4E9 /* CaffeinateBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeinateBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0918686C41373E3A6ED655E6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		2D70E580DECC6D93690EFD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		812503D72961ED483033783D /* CaffeinateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateManager.swift; sourceTree = "<group>"; };
+		81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
 		86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarApp.swift; sourceTree = "<group>"; };
+		DBCEDE027E8543C98073BCE4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		E92FBC5031FC87807E90E4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0648941829F13CEAFE3DEFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1099528E4EC3260233D8EE7 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A18AD4F892817385EBAAB99B /* Products */ = {
@@ -35,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				D3E3D066F27445035164BB90 /* CaffeinateBar */,
+				E4D5C5A89E03D556C3735373 /* Frameworks */,
 				A18AD4F892817385EBAAB99B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -42,13 +60,23 @@
 		D3E3D066F27445035164BB90 /* CaffeinateBar */ = {
 			isa = PBXGroup;
 			children = (
+				2D70E580DECC6D93690EFD05 /* AppDelegate.swift */,
 				F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */,
 				86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */,
 				812503D72961ED483033783D /* CaffeinateManager.swift */,
+				81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */,
 				E92FBC5031FC87807E90E4DD /* Info.plist */,
 				0918686C41373E3A6ED655E6 /* MenuBarView.swift */,
 			);
 			path = CaffeinateBar;
+			sourceTree = "<group>";
+		};
+		E4D5C5A89E03D556C3735373 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBCEDE027E8543C98073BCE4 /* IOKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,6 +88,7 @@
 			buildPhases = (
 				FA0E31B0B1205B7D5DA4B84D /* Sources */,
 				B4F37410058857D860E53337 /* Resources */,
+				D0648941829F13CEAFE3DEFD /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -121,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8631D1025512927D48E26BE4 /* AppDelegate.swift in Sources */,
 				E1F7DC538684416376E69DFA /* CaffeinateBarApp.swift in Sources */,
 				6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */,
+				D7A40CD5DA435831E79BFB5C /* HotkeyManager.swift in Sources */,
 				D3D5ECF53AC9BA2CEB9C04E8 /* MenuBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
