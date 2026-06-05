@@ -63,7 +63,8 @@ struct MenuBarView: View {
                 symbol: "display",
                 shortFlag: "-d",
                 title: "Prevent display sleep",
-                subtitle: "Keeps the screen on"
+                subtitle: "Keeps the screen on",
+                info: "Your screen will stay fully lit no matter how long you leave it. Perfect for presentations, cooking recipes, or any time you don't want the display to go dark while you step away."
             )
             AssertionRow(
                 flag: $manager.flagIdle,
@@ -71,7 +72,8 @@ struct MenuBarView: View {
                 symbol: "moon.zzz",
                 shortFlag: "-i",
                 title: "Prevent idle sleep",
-                subtitle: "System stays awake"
+                subtitle: "System stays awake",
+                info: "Stops your Mac from dozing off when you're not actively using it. Your screen might still dim to save power, but the computer keeps running in the background — great for long downloads or remote connections."
             )
             AssertionRow(
                 flag: $manager.flagDisk,
@@ -79,7 +81,8 @@ struct MenuBarView: View {
                 symbol: "internaldrive",
                 shortFlag: "-m",
                 title: "Prevent disk sleep",
-                subtitle: "Disk stays spinning"
+                subtitle: "Disk stays spinning",
+                info: "Keeps your hard drive spinning and ready at all times. Useful during large file transfers, backups, or video exports where a sleeping disk could slow things down or cause errors."
             )
             AssertionRow(
                 flag: $manager.flagSystem,
@@ -87,7 +90,8 @@ struct MenuBarView: View {
                 symbol: "bolt",
                 shortFlag: "-s",
                 title: "Prevent system sleep",
-                subtitle: "AC power only"
+                subtitle: "AC power only ⚡",
+                info: "Prevents your Mac from sleeping entirely — even on a schedule. Only works when your Mac is plugged into a power adapter. Handy for overnight tasks like rendering, compiling, or running a local server."
             )
         }
         .padding(.bottom, 4)
@@ -97,7 +101,14 @@ struct MenuBarView: View {
 
     private var timeoutSection: some View {
         VStack(alignment: .leading, spacing: 6) {
-            sectionHeader("TIMEOUT  (-t)")
+            HStack(spacing: 4) {
+                sectionHeader("TIMEOUT  (-t)")
+                Image(systemName: "info.circle")
+                    .font(.system(size: 10))
+                    .foregroundStyle(.tertiary)
+                    .help("Automatically stops Caffeinate after the selected time. Handy if you only need your Mac awake for a meeting, a movie, or a specific task — it goes back to normal sleep on its own when the timer runs out.")
+                    .padding(.top, 6)
+            }
 
             Picker("", selection: $manager.timeoutPreset) {
                 ForEach(TimeoutPreset.allCases) { preset in
@@ -203,6 +214,7 @@ private struct AssertionRow: View {
     let shortFlag: String
     let title: String
     let subtitle: String
+    let info: String
 
     var body: some View {
         Button {
@@ -220,6 +232,10 @@ private struct AssertionRow: View {
                         Text(shortFlag)
                             .font(.system(size: 11, design: .monospaced))
                             .foregroundStyle(.secondary)
+                        Image(systemName: "info.circle")
+                            .font(.system(size: 10))
+                            .foregroundStyle(.tertiary)
+                            .help(info)
                     }
                     Text(subtitle)
                         .font(.caption2)
