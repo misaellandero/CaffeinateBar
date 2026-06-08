@@ -35,11 +35,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard let button = statusItem.button,
               let base = NSImage(systemSymbolName: "cup.and.saucer.fill",
                                  accessibilityDescription: nil) else { return }
-        let color: NSColor = manager.isActive ? .systemGreen : .tertiaryLabelColor
-        if let img = base.withSymbolConfiguration(
-            NSImage.SymbolConfiguration(paletteColors: [color])) {
-            img.isTemplate = false
-            button.image = img
+        if manager.colorIcon {
+            // Explicit color: green when active, gray when inactive
+            let color: NSColor = manager.isActive ? .systemGreen : .tertiaryLabelColor
+            if let img = base.withSymbolConfiguration(
+                NSImage.SymbolConfiguration(paletteColors: [color])) {
+                img.isTemplate = false
+                button.image = img
+            }
+        } else {
+            // System template: macOS auto-adapts to dark/light mode (standard B&W)
+            let symbol = manager.isActive ? "cup.and.saucer.fill" : "cup.and.saucer"
+            if let img = NSImage(systemSymbolName: symbol, accessibilityDescription: nil) {
+                img.isTemplate = true
+                button.image = img
+            }
         }
     }
 
