@@ -47,10 +47,7 @@ class CaffeinateManager: ObservableObject {
     // MARK: App settings
 
     @Published var launchAtLogin: Bool {
-        didSet {
-            ud.set(launchAtLogin, forKey: "launchAtLogin")
-            applyLaunchAtLogin()
-        }
+        didSet { applyLaunchAtLogin() }     // state of truth is SMAppService, not ud
     }
     @Published var activateOnLaunch: Bool {
         didSet { ud.set(activateOnLaunch, forKey: "activateOnLaunch") }
@@ -61,13 +58,10 @@ class CaffeinateManager: ObservableObject {
     @Published var globalHotkeyEnabled: Bool {
         didSet { ud.set(globalHotkeyEnabled, forKey: "globalHotkeyEnabled") }
     }
-    /// "Allow screen to sleep" = inverse of flagDisplay; kept in sync below.
-    @Published var allowScreenToSleep: Bool {
-        didSet {
-            ud.set(allowScreenToSleep, forKey: "allowScreenToSleep")
-            guard allowScreenToSleep != !flagDisplay else { return }
-            flagDisplay = !allowScreenToSleep
-        }
+    /// Inverse alias of flagDisplay — not stored separately; flagDisplay is the source of truth.
+    var allowScreenToSleep: Bool {
+        get { !flagDisplay }
+        set { flagDisplay = !newValue }
     }
     @Published var allowNotifications: Bool {
         didSet {
@@ -116,7 +110,6 @@ class CaffeinateManager: ObservableObject {
         activateOnLaunch    = ud.object(forKey: "activateOnLaunch")    as? Bool ?? false
         leftClickToToggle   = ud.object(forKey: "leftClickToToggle")   as? Bool ?? false
         globalHotkeyEnabled = ud.object(forKey: "globalHotkeyEnabled") as? Bool ?? false
-        allowScreenToSleep  = ud.object(forKey: "allowScreenToSleep")  as? Bool ?? false
         allowNotifications  = ud.object(forKey: "allowNotifications")  as? Bool ?? false
         colorIcon           = ud.object(forKey: "colorIcon")           as? Bool ?? false
         activateOnACPower   = ud.object(forKey: "activateOnACPower")   as? Bool ?? false

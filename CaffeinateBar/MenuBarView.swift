@@ -208,7 +208,8 @@ struct MenuBarView: View {
             settingsDivider("SLEEP & POWER")
 
             SettingsRow(
-                toggle: Binding(get: { !manager.flagDisplay }, set: { manager.flagDisplay = !$0 }),
+                toggle: Binding(get: { manager.allowScreenToSleep },
+                                set: { manager.allowScreenToSleep = $0 }),
                 symbol: "moon", title: "Allow Screen to Sleep",
                 tip: "Screen can turn off while Mac stays awake — saves power during overnight tasks.")
             SettingsRow(toggle: $manager.activateOnACPower,
