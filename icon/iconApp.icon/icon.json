@@ -1,0 +1,116 @@
+{
+  "fill-specializations" : [
+    {
+      "value" : {
+        "linear-gradient" : [
+          "extended-srgb:1.00000,0.55294,0.15686,1.00000",
+          "extended-gray:0.00000,1.00000"
+        ],
+        "orientation" : {
+          "start" : {
+            "x" : 0.5,
+            "y" : 0
+          },
+          "stop" : {
+            "x" : 0.5,
+            "y" : 0.7
+          }
+        }
+      }
+    },
+    {
+      "appearance" : "dark",
+      "value" : {
+        "linear-gradient" : [
+          "display-p3:0.36722,0.22519,0.10109,1.00000",
+          "extended-gray:0.00000,1.00000"
+        ],
+        "orientation" : {
+          "start" : {
+            "x" : 0.5,
+            "y" : 0
+          },
+          "stop" : {
+            "x" : 0.5,
+            "y" : 0.7
+          }
+        }
+      }
+    }
+  ],
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "image-name" : "Image.png",
+          "name" : "Image",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              5.399999999999977,
+              67.90813516854598
+            ]
+          }
+        },
+        {
+          "glass" : false,
+          "image-name" : "brillo.png",
+          "name" : "brillo",
+          "opacity" : 0.3,
+          "position" : {
+            "scale" : 1.6,
+            "translation-in-points" : [
+              9,
+              -23.27145114397831
+            ]
+          }
+        },
+        {
+          "hidden" : true,
+          "image-name" : "cup4.png",
+          "name" : "cup4",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              -11.874186740401903,
+              43.946102341857994
+            ]
+          }
+        },
+        {
+          "hidden" : true,
+          "image-name" : "cup2.png",
+          "name" : "cup2"
+        },
+        {
+          "glass" : false,
+          "hidden" : true,
+          "image-name" : "cup3.png",
+          "name" : "cup3",
+          "opacity" : 1,
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              0.8390145325586378,
+              55.15813516854599
+            ]
+          }
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

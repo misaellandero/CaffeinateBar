@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132CA0D52FD7DF6100F9A2C3 /* iconApp.icon in Resources */ = {isa = PBXBuildFile; fileRef = 132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */; };
 		6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812503D72961ED483033783D /* CaffeinateManager.swift */; };
 		8631D1025512927D48E26BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70E580DECC6D93690EFD05 /* AppDelegate.swift */; };
 		CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */; };
@@ -19,12 +20,12 @@
 /* Begin PBXFileReference section */
 		044633F66D4C46BF4E78B4E9 /* CaffeinateBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeinateBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0918686C41373E3A6ED655E6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = iconApp.icon; sourceTree = "<group>"; };
 		2D70E580DECC6D93690EFD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		812503D72961ED483033783D /* CaffeinateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateManager.swift; sourceTree = "<group>"; };
 		81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
 		86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarApp.swift; sourceTree = "<group>"; };
 		DBCEDE027E8543C98073BCE4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		E92FBC5031FC87807E90E4DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +66,6 @@
 				86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */,
 				812503D72961ED483033783D /* CaffeinateManager.swift */,
 				81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */,
-				E92FBC5031FC87807E90E4DD /* Info.plist */,
 				0918686C41373E3A6ED655E6 /* MenuBarView.swift */,
 			);
 			path = CaffeinateBar;
@@ -74,6 +74,7 @@
 		E4D5C5A89E03D556C3735373 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */,
 				DBCEDE027E8543C98073BCE4 /* IOKit.framework */,
 			);
 			name = Frameworks;
@@ -140,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */,
+				132CA0D52FD7DF6100F9A2C3 /* iconApp.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +285,7 @@
 		3AC3ACB2128A123CC318A24C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iconApp;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -304,7 +306,7 @@
 		E94674A79058D8CD9AF05190 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = iconApp;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
