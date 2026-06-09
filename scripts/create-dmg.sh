@@ -59,15 +59,15 @@ tell application "Finder"
   set current view of container window of dmgFolder to icon view
   set toolbar visible of container window of dmgFolder to false
   set statusbar visible of container window of dmgFolder to false
-  set bounds of container window of dmgFolder to {120, 120, 920, 620}
+  set bounds of container window of dmgFolder to {120, 120, 1020, 720}
   set theViewOptions to the icon view options of container window of dmgFolder
   tell theViewOptions
     set arrangement to not arranged
-    set icon size to 96
+    set icon size to 128
   end tell
   set background picture of theViewOptions to bgFile
-  set position of item "$SCHEME.app" of dmgFolder to {205, 255}
-  set position of item "Applications" of dmgFolder to {595, 255}
+  set position of item "$SCHEME.app" of dmgFolder to {286, 343}
+  set position of item "Applications" of dmgFolder to {616, 343}
   close container window of dmgFolder
   open dmgFolder
   update dmgFolder without registering applications
@@ -93,7 +93,11 @@ cp "$FINAL_DMG" "$LATEST_DMG"
 
 (
   cd "$DIST_DIR"
-  shasum -a 256 "$(basename "$FINAL_DMG")" "$(basename "$LATEST_DMG")" >> SHA256SUMS.txt
+  {
+    [[ -f "$SCHEME-1.0-1-macOS.zip" ]] && shasum -a 256 "$SCHEME-1.0-1-macOS.zip"
+    [[ -f "$SCHEME-macOS.zip" ]] && shasum -a 256 "$SCHEME-macOS.zip"
+    shasum -a 256 "$(basename "$FINAL_DMG")" "$(basename "$LATEST_DMG")"
+  } > SHA256SUMS.txt
 )
 
 printf 'Created DMG artifacts:\n'
