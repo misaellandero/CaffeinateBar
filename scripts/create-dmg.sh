@@ -8,6 +8,7 @@ VOLNAME="$SCHEME $VERSION"
 BUILD_DIR="$ROOT_DIR/build/dmg"
 DIST_DIR="$ROOT_DIR/dist"
 APP_PATH="$ROOT_DIR/build/$SCHEME.xcarchive/Products/Applications/$SCHEME.app"
+APP_ICON="$APP_PATH/Contents/Resources/iconApp.icns"
 BACKGROUND="$ROOT_DIR/assets/dmg-background.png"
 STAGING="$BUILD_DIR/staging"
 RW_DMG="$BUILD_DIR/$SCHEME-rw.dmg"
@@ -20,6 +21,11 @@ fi
 
 if [[ ! -f "$BACKGROUND" ]]; then
   echo "Missing DMG background: $BACKGROUND" >&2
+  exit 1
+fi
+
+if [[ ! -f "$APP_ICON" ]]; then
+  echo "Missing app icon: $APP_ICON" >&2
   exit 1
 fi
 
@@ -82,9 +88,15 @@ tell application "Finder"
 end tell
 APPLESCRIPT
 
+cp "$APP_ICON" "$MOUNT_POINT/.VolumeIcon.icns"
+SetFile -a C "$MOUNT_POINT"
 sync
 if [[ ! -f "$MOUNT_POINT/.DS_Store" ]]; then
   echo "Finder did not write DMG layout metadata." >&2
+  exit 1
+fi
+if [[ ! -f "$MOUNT_POINT/.VolumeIcon.icns" ]]; then
+  echo "Finder volume icon was not written to the DMG." >&2
   exit 1
 fi
 hdiutil detach "$MOUNT_POINT" -quiet
