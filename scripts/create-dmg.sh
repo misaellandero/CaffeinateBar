@@ -10,7 +10,6 @@ DIST_DIR="$ROOT_DIR/dist"
 APP_PATH="$ROOT_DIR/build/$SCHEME.xcarchive/Products/Applications/$SCHEME.app"
 BACKGROUND="$ROOT_DIR/assets/dmg-background.png"
 STAGING="$BUILD_DIR/staging"
-MOUNT_POINT="$BUILD_DIR/mount"
 RW_DMG="$BUILD_DIR/$SCHEME-rw.dmg"
 FINAL_DMG="$DIST_DIR/$SCHEME-$VERSION-macOS.dmg"
 LATEST_DMG="$DIST_DIR/$SCHEME-macOS.dmg"
@@ -25,7 +24,7 @@ if [[ ! -f "$BACKGROUND" ]]; then
 fi
 
 rm -rf "$BUILD_DIR" "$FINAL_DMG" "$LATEST_DMG"
-mkdir -p "$STAGING/.background" "$MOUNT_POINT" "$DIST_DIR"
+mkdir -p "$STAGING/.background" "$DIST_DIR"
 
 cp -R "$APP_PATH" "$STAGING/"
 ln -s /Applications "$STAGING/Applications"
@@ -38,7 +37,14 @@ hdiutil create \
   -format UDRW \
   "$RW_DMG" >/dev/null
 
-hdiutil attach "$RW_DMG" -readwrite -noverify -noautoopen -mountpoint "$MOUNT_POINT" >/dev/null
+for existing_mount in /Volumes/"$VOLNAME"*; do
+  if [[ -d "$existing_mount" ]]; then
+    hdiutil detach "$existing_mount" -quiet || true
+  fi
+done
+
+hdiutil attach "$RW_DMG" -readwrite -noverify -noautoopen >/dev/null
+MOUNT_POINT="/Volumes/$VOLNAME"
 
 cleanup() {
   if [[ -n "${MOUNT_POINT:-}" && -d "$MOUNT_POINT" ]]; then
@@ -52,30 +58,35 @@ cp "$BACKGROUND" "$MOUNT_POINT/.background/background.png"
 
 osascript <<APPLESCRIPT
 tell application "Finder"
-  set dmgFolder to POSIX file "$MOUNT_POINT" as alias
   set bgFile to POSIX file "$MOUNT_POINT/.background/background.png" as alias
-  open dmgFolder
-  delay 1
-  set current view of container window of dmgFolder to icon view
-  set toolbar visible of container window of dmgFolder to false
-  set statusbar visible of container window of dmgFolder to false
-  set bounds of container window of dmgFolder to {120, 120, 1020, 720}
-  set theViewOptions to the icon view options of container window of dmgFolder
-  tell theViewOptions
-    set arrangement to not arranged
-    set icon size to 128
+  tell disk "$VOLNAME"
+    open
+    delay 1
+    set current view of container window to icon view
+    set toolbar visible of container window to false
+    set statusbar visible of container window to false
+    set bounds of container window to {120, 120, 1020, 720}
+    set theViewOptions to the icon view options of container window
+    tell theViewOptions
+      set arrangement to not arranged
+      set icon size to 128
+    end tell
+    set background picture of theViewOptions to bgFile
+    set position of item "$SCHEME.app" of container window to {286, 343}
+    set position of item "Applications" of container window to {616, 343}
+    close
+    open
+    update without registering applications
+    delay 1
   end tell
-  set background picture of theViewOptions to bgFile
-  set position of item "$SCHEME.app" of dmgFolder to {286, 343}
-  set position of item "Applications" of dmgFolder to {616, 343}
-  close container window of dmgFolder
-  open dmgFolder
-  update dmgFolder without registering applications
-  delay 1
 end tell
 APPLESCRIPT
 
 sync
+if [[ ! -f "$MOUNT_POINT/.DS_Store" ]]; then
+  echo "Finder did not write DMG layout metadata." >&2
+  exit 1
+fi
 hdiutil detach "$MOUNT_POINT" -quiet
 trap - EXIT
 
