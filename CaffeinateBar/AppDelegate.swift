@@ -96,12 +96,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private func showContextMenu() {
         let menu = NSMenu()
         menu.autoenablesItems = false
-        let t = NSMenuItem(title: manager.isActive ? "Disable Caffeinate" : "Enable Caffeinate",
+        let t = NSMenuItem(title: NSLocalizedString("Disable Caffeinate", comment: "Menu item to disable caffeinate"),
                            action: #selector(toggleCaffeinate), keyEquivalent: "k")
+        if manager.isActive {
+            t.title = NSLocalizedString("Disable Caffeinate", comment: "Menu item to disable caffeinate")
+        } else {
+            t.title = NSLocalizedString("Enable Caffeinate", comment: "Menu item to enable caffeinate")
+        }
         t.keyEquivalentModifierMask = .command; t.target = self
         menu.addItem(t)
         menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Quit CaffeinateBar",
+        menu.addItem(NSMenuItem(title: NSLocalizedString("Quit CaffeinateBar", comment: "Menu item to quit the application"),
                                 action: #selector(NSApplication.terminate(_:)),
                                 keyEquivalent: "q"))
         statusItem.menu = menu
@@ -146,3 +151,4 @@ extension AppDelegate: NSPopoverDelegate {
         }
     }
 }
+
