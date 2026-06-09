@@ -6,12 +6,12 @@ A minimal macOS menu bar app that keeps your Mac awake using `caffeinate`, with 
 
 Download the latest release:
 
-[CaffeinateBar-macOS.zip](https://github.com/misaellandero-dexcom/CaffeinateBar/releases/latest/download/CaffeinateBar-macOS.zip)
+[CaffeinateBar-macOS.dmg](https://github.com/misaellandero-dexcom/CaffeinateBar/releases/latest/download/CaffeinateBar-macOS.dmg)
 
 Install:
 
-1. Unzip `CaffeinateBar-macOS.zip`.
-2. Drag `CaffeinateBar.app` to `/Applications`.
+1. Open `CaffeinateBar-macOS.dmg`.
+2. Drag `CaffeinateBar.app` to `Applications`.
 3. Open it from Finder.
 
 Current GitHub builds are ad-hoc signed and not notarized. On first launch, macOS may show an unidentified developer warning. If that happens, open **System Settings > Privacy & Security** and allow CaffeinateBar, or right-click the app and choose **Open**.
@@ -51,13 +51,16 @@ xcodebuild -project CaffeinateBar.xcodeproj -scheme CaffeinateBar -configuration
 
 ```bash
 scripts/package-release.sh
+scripts/create-dmg.sh
 git tag v1.0.0
 git push origin main --tags
-gh release create v1.0.0 dist/CaffeinateBar-macOS.zip dist/CaffeinateBar-*-macOS.zip dist/SHA256SUMS.txt --title "CaffeinateBar v1.0.0"
+gh release create v1.0.0 dist/CaffeinateBar-macOS.dmg dist/CaffeinateBar-*-macOS.dmg dist/CaffeinateBar-macOS.zip dist/CaffeinateBar-*-macOS.zip dist/SHA256SUMS.txt --title "CaffeinateBar v1.0.0"
 ```
 
 The release upload includes:
 
+- `CaffeinateBar-macOS.dmg`
+- `CaffeinateBar-<version>-macOS.dmg`
 - `CaffeinateBar-macOS.zip`
 - `CaffeinateBar-<version>-<build>-macOS.zip`
 - `SHA256SUMS.txt`
@@ -68,6 +71,8 @@ The release upload includes:
 CaffeinateBar/
 ├── project.yml                  # xcodegen spec
 ├── scripts/package-release.sh    # builds release zip artifacts
+├── scripts/create-dmg.sh         # builds drag-to-Applications DMG artifacts
+├── assets/dmg-background.png     # DMG Finder background
 ├── CaffeinateBar.xcodeproj/
 └── CaffeinateBar/
     ├── CaffeinateBar.entitlements
