@@ -6,15 +6,17 @@ A minimal macOS menu bar app that keeps your Mac awake using `caffeinate`, with 
 
 Download the latest release:
 
-[CaffeinateBar-macOS.dmg](https://github.com/misaellandero-dexcom/CaffeinateBar/releases/latest/download/CaffeinateBar-macOS.dmg)
+[Download CaffeinateBar on the App Store](https://apple.co/4oGcw7D)
 
 Install:
 
-1. Open `CaffeinateBar-macOS.dmg`.
-2. Drag `CaffeinateBar.app` to `Applications`.
-3. Open it from Finder.
+1. Open the App Store link.
+2. Download CaffeinateBar.
+3. Launch it from your Applications folder.
 
-Current GitHub builds are ad-hoc signed and not notarized. On first launch, macOS may show an unidentified developer warning. If that happens, open **System Settings > Privacy & Security** and allow CaffeinateBar, or right-click the app and choose **Open**.
+GitHub release builds are also available for manual installation:
+
+[CaffeinateBar-macOS.dmg](https://github.com/misaellandero/CaffeinateBar/releases/latest/download/CaffeinateBar-macOS.dmg)
 
 ## Features
 
