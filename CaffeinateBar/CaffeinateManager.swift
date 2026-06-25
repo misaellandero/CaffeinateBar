@@ -3,6 +3,7 @@ import Combine
 import IOKit.ps
 import UserNotifications
 import ServiceManagement
+import StoreKit
 
 // MARK: - TimeoutPreset
 
@@ -96,6 +97,7 @@ class CaffeinateManager: ObservableObject {
     private var process: Process?
     private var timer: AnyCancellable?
     private var powerRunLoopSource: CFRunLoopSource?
+    private let ratingPrompt = RatingPromptController()
 
     // MARK: Init
 
@@ -140,10 +142,9 @@ class CaffeinateManager: ObservableObject {
         let p = Process()
         p.executableURL = URL(fileURLWithPath: "/usr/bin/caffeinate")
         p.arguments = arguments
-        p.terminationHandler = { [weak self] _ in
+        p.terminationHandler = { [weak self] finishedProcess in
             DispatchQueue.main.async {
-                self?.isActive = false
-                self?.stopTimer()
+                self?.handleCaffeinateProcessEnded(finishedProcess)
             }
         }
         do {
@@ -162,8 +163,7 @@ class CaffeinateManager: ObservableObject {
         let wasActive = isActive
         process?.terminate()
         process = nil
-        isActive = false
-        stopTimer()
+        if wasActive { completeActiveSession() }
         if wasActive { postNotification(active: false) }
     }
 
@@ -179,6 +179,20 @@ class CaffeinateManager: ObservableObject {
 
     private func stopTimer() {
         timer?.cancel(); timer = nil; elapsedSeconds = 0
+    }
+
+    private func handleCaffeinateProcessEnded(_ endedProcess: Process) {
+        guard process === endedProcess else { return }
+        process = nil
+        completeActiveSession()
+    }
+
+    private func completeActiveSession() {
+        guard isActive else { return }
+        let sessionDuration = elapsedSeconds
+        isActive = false
+        stopTimer()
+        ratingPrompt.recordCompletedSession(duration: sessionDuration)
     }
 
     // MARK: Launch at Login
@@ -255,3 +269,77 @@ class CaffeinateManager: ObservableObject {
     deinit { disable(); stopPowerMonitoring() }
 }
 
+// MARK: - RatingPromptController
+
+private final class RatingPromptController {
+    private enum Key {
+        static let firstLaunchDate = "rating.firstLaunchDate"
+        static let meaningfulSessions = "rating.meaningfulSessions"
+        static let totalActiveSeconds = "rating.totalActiveSeconds"
+        static let lastRequestedVersion = "rating.lastRequestedVersion"
+        static let lastRequestDate = "rating.lastRequestDate"
+    }
+
+    private let ud = UserDefaults.standard
+    private let minimumSessionDuration = 120
+    private let minimumMeaningfulSessions = 3
+    private let minimumTotalActiveSeconds = 600
+    private let minimumDaysSinceFirstLaunch: TimeInterval = 24 * 60 * 60
+    private let minimumDaysBetweenRequests: TimeInterval = 90 * 24 * 60 * 60
+
+    init() {
+        if ud.object(forKey: Key.firstLaunchDate) == nil {
+            ud.set(Date(), forKey: Key.firstLaunchDate)
+        }
+    }
+
+    func recordCompletedSession(duration: Int) {
+        guard duration > 0 else { return }
+
+        let totalActiveSeconds = ud.integer(forKey: Key.totalActiveSeconds) + duration
+        ud.set(totalActiveSeconds, forKey: Key.totalActiveSeconds)
+
+        if duration >= minimumSessionDuration {
+            let sessions = ud.integer(forKey: Key.meaningfulSessions) + 1
+            ud.set(sessions, forKey: Key.meaningfulSessions)
+        }
+
+        requestReviewIfAppropriate()
+    }
+
+    private func requestReviewIfAppropriate() {
+        guard hasEnoughRealUse else { return }
+        guard hasNotRequestedThisVersion else { return }
+        guard isOutsideCooldown else { return }
+
+        ud.set(currentVersion, forKey: Key.lastRequestedVersion)
+        ud.set(Date(), forKey: Key.lastRequestDate)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            SKStoreReviewController.requestReview()
+        }
+    }
+
+    private var hasEnoughRealUse: Bool {
+        let firstLaunchDate = ud.object(forKey: Key.firstLaunchDate) as? Date ?? Date()
+        let appAge = Date().timeIntervalSince(firstLaunchDate)
+        return appAge >= minimumDaysSinceFirstLaunch
+            && ud.integer(forKey: Key.meaningfulSessions) >= minimumMeaningfulSessions
+            && ud.integer(forKey: Key.totalActiveSeconds) >= minimumTotalActiveSeconds
+    }
+
+    private var hasNotRequestedThisVersion: Bool {
+        ud.string(forKey: Key.lastRequestedVersion) != currentVersion
+    }
+
+    private var isOutsideCooldown: Bool {
+        guard let lastRequestDate = ud.object(forKey: Key.lastRequestDate) as? Date else { return true }
+        return Date().timeIntervalSince(lastRequestDate) >= minimumDaysBetweenRequests
+    }
+
+    private var currentVersion: String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "0"
+        return "\(version)-\(build)"
+    }
+}
