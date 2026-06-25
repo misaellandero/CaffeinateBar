@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10000012 /* SharedWidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001 /* SharedWidgetState.swift */; };
+		A10000013 /* CaffeinateBarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000002 /* CaffeinateBarWidget.swift */; };
+		A10000014 /* SharedWidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001 /* SharedWidgetState.swift */; };
+		A10000015 /* CaffeinateBarWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A10000004 /* CaffeinateBarWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		132CA0D52FD7DF6100F9A2C3 /* iconApp.icon in Resources */ = {isa = PBXBuildFile; fileRef = 132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */; };
 		6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812503D72961ED483033783D /* CaffeinateManager.swift */; };
 		8631D1025512927D48E26BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70E580DECC6D93690EFD05 /* AppDelegate.swift */; };
@@ -20,6 +24,11 @@
 /* Begin PBXFileReference section */
 		044633F66D4C46BF4E78B4E9 /* CaffeinateBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeinateBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0918686C41373E3A6ED655E6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		A10000001 /* SharedWidgetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetState.swift; sourceTree = "<group>"; };
+		A10000002 /* CaffeinateBarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarWidget.swift; sourceTree = "<group>"; };
+		A10000003 /* CaffeinateBarWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CaffeinateBarWidget.entitlements; sourceTree = "<group>"; };
+		A10000004 /* CaffeinateBarWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CaffeinateBarWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = iconApp.icon; sourceTree = "<group>"; };
 		2D70E580DECC6D93690EFD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		812503D72961ED483033783D /* CaffeinateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateManager.swift; sourceTree = "<group>"; };
@@ -29,7 +38,38 @@
 		F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXContainerItemProxy section */
+		A10000019 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB75AD811BA13E98AD2C6223 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10000011;
+			remoteInfo = CaffeinateBarWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A10000010 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A10000015 /* CaffeinateBarWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		A10000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D0648941829F13CEAFE3DEFD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				044633F66D4C46BF4E78B4E9 /* CaffeinateBar.app */,
+				A10000004 /* CaffeinateBarWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D3E3D066F27445035164BB90 /* CaffeinateBar */,
+				A10000005 /* CaffeinateBarWidget */,
 				E4D5C5A89E03D556C3735373 /* Frameworks */,
 				A18AD4F892817385EBAAB99B /* Products */,
 			);
@@ -67,6 +109,7 @@
 				812503D72961ED483033783D /* CaffeinateManager.swift */,
 				81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */,
 				0918686C41373E3A6ED655E6 /* MenuBarView.swift */,
+				A10000001 /* SharedWidgetState.swift */,
 			);
 			path = CaffeinateBar;
 			sourceTree = "<group>";
@@ -80,9 +123,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A10000005 /* CaffeinateBarWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A10000002 /* CaffeinateBarWidget.swift */,
+				A10000003 /* CaffeinateBarWidget.entitlements */,
+				A10000006 /* Info.plist */,
+			);
+			path = CaffeinateBarWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A10000011 /* CaffeinateBarWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000018 /* Build configuration list for PBXNativeTarget "CaffeinateBarWidget" */;
+			buildPhases = (
+				A10000009 /* Sources */,
+				A10000008 /* Resources */,
+				A10000007 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CaffeinateBarWidget;
+			packageProductDependencies = (
+			);
+			productName = CaffeinateBarWidget;
+			productReference = A10000004 /* CaffeinateBarWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D4058960C224EADC89B601E8 /* CaffeinateBar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C8520F7A3BB3FC2CF33DABD /* Build configuration list for PBXNativeTarget "CaffeinateBar" */;
@@ -90,10 +162,12 @@
 				FA0E31B0B1205B7D5DA4B84D /* Sources */,
 				B4F37410058857D860E53337 /* Resources */,
 				D0648941829F13CEAFE3DEFD /* Frameworks */,
+				A10000010 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A10000020 /* PBXTargetDependency */,
 			);
 			name = CaffeinateBar;
 			packageProductDependencies = (
@@ -111,6 +185,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					A10000011 = {
+						CreatedOnToolsVersion = 16.0;
+						ProvisioningStyle = Automatic;
+					};
 					D4058960C224EADC89B601E8 = {
 						ProvisioningStyle = Automatic;
 					};
@@ -131,11 +209,19 @@
 			projectRoot = "";
 			targets = (
 				D4058960C224EADC89B601E8 /* CaffeinateBar */,
+				A10000011 /* CaffeinateBarWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A10000008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4F37410058857D860E53337 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +234,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A10000009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000013 /* CaffeinateBarWidget.swift in Sources */,
+				A10000014 /* SharedWidgetState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA0E31B0B1205B7D5DA4B84D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,12 +252,73 @@
 				6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */,
 				D7A40CD5DA435831E79BFB5C /* HotkeyManager.swift in Sources */,
 				D3D5ECF53AC9BA2CEB9C04E8 /* MenuBarView.swift in Sources */,
+				A10000012 /* SharedWidgetState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A10000020 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10000011 /* CaffeinateBarWidget */;
+			targetProxy = A10000019 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		A10000016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63AJC847ZW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		A10000017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63AJC847ZW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
 		23CD392F7E4F605FC466A13F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,6 +496,15 @@
 			buildConfigurations = (
 				3AC3ACB2128A123CC318A24C /* Debug */,
 				E94674A79058D8CD9AF05190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A10000018 /* Build configuration list for PBXNativeTarget "CaffeinateBarWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000016 /* Debug */,
+				A10000017 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

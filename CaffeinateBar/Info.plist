@@ -12,6 +12,17 @@
 	<string>CaffeinateBar</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.local.CaffeinateBar</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>caffeinatebar</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>

@@ -18,6 +18,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if manager.activateOnLaunch { manager.enable() }
     }
 
+    func application(_ application: NSApplication, open urls: [URL]) {
+        guard urls.contains(where: { $0.scheme == "caffeinatebar" }) else { return }
+        if !popover.isShown {
+            togglePopover()
+        }
+    }
+
     // MARK: - Status Item
 
     private func setupStatusItem() {
@@ -151,4 +158,3 @@ extension AppDelegate: NSPopoverDelegate {
         }
     }
 }
-
