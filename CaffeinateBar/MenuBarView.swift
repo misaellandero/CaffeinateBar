@@ -51,7 +51,7 @@ struct MenuBarView: View {
                 Text(manager.isActive ? "Caffeinate Active" : "Sleep Allowed")
                     .font(.headline)
                 if manager.isActive {
-                    Text("Running for \(formattedElapsed)")
+                    Text(String(format: NSLocalizedString("Running for %@", comment: "Status subtitle with elapsed active time"), formattedElapsed))
                         .font(.caption).foregroundStyle(.secondary)
                 } else {
                     Text("Display can sleep normally")
@@ -114,7 +114,7 @@ struct MenuBarView: View {
                         .font(.system(size: 11, weight: .medium))
                         .foregroundStyle(.secondary)
                         .frame(width: 16)
-                    Text(title)
+                    Text(LocalizedStringKey(title))
                         .font(.system(size: 10, weight: .semibold))
                         .foregroundStyle(.secondary)
                     Spacer()
@@ -172,7 +172,7 @@ struct MenuBarView: View {
                 Spacer()
                 Picker("", selection: $manager.timeoutPreset) {
                     ForEach(TimeoutPreset.allCases) { p in
-                        Text(p.label).tag(p)
+                        Text(LocalizedStringKey(p.label)).tag(p)
                     }
                 }
                 .pickerStyle(.menu)
@@ -238,7 +238,7 @@ struct MenuBarView: View {
 
     private func settingsDivider(_ label: String) -> some View {
         HStack {
-            Text(label)
+            Text(LocalizedStringKey(label))
                 .font(.system(size: 9, weight: .semibold))
                 .foregroundStyle(.quaternary)
             VStack { Divider() }
@@ -307,7 +307,7 @@ private struct AssertionRow: View {
                 .font(.system(size: 13))
                 .foregroundStyle(flag ? Color.accentColor : Color.secondary)
                 .frame(width: 20)
-            Text(title).font(.subheadline)
+            Text(LocalizedStringKey(title)).font(.subheadline)
             Text(shortFlag)
                 .font(.system(size: 10, design: .monospaced))
                 .foregroundStyle(.tertiary)
@@ -320,7 +320,7 @@ private struct AssertionRow: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 5)
         .opacity(isLocked ? 0.5 : 1.0)
-        .help(tip)
+        .help(Text(LocalizedStringKey(tip)))
         .contentShape(Rectangle())
         .onTapGesture { if !isLocked { flag.toggle() } }
     }
@@ -340,7 +340,7 @@ private struct SettingsRow: View {
                 .font(.system(size: 13))
                 .foregroundStyle(.secondary)
                 .frame(width: 20)
-            Text(title).font(.subheadline)
+            Text(LocalizedStringKey(title)).font(.subheadline)
             Spacer()
             Toggle("", isOn: $toggle)
                 .toggleStyle(.switch).labelsHidden()
@@ -348,7 +348,7 @@ private struct SettingsRow: View {
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 6)
-        .help(tip)
+        .help(Text(LocalizedStringKey(tip)))
     }
 }
 

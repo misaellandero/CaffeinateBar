@@ -11,7 +11,8 @@
 		A10000013 /* CaffeinateBarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000002 /* CaffeinateBarWidget.swift */; };
 		A10000014 /* SharedWidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001 /* SharedWidgetState.swift */; };
 		A10000015 /* CaffeinateBarWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A10000004 /* CaffeinateBarWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		132CA0D52FD7DF6100F9A2C3 /* iconApp.icon in Resources */ = {isa = PBXBuildFile; fileRef = 132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */; };
+		A10000021 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000023 /* Localizable.strings */; };
+		A10000022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000025 /* Localizable.strings */; };
 		6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812503D72961ED483033783D /* CaffeinateManager.swift */; };
 		8631D1025512927D48E26BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70E580DECC6D93690EFD05 /* AppDelegate.swift */; };
 		CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */; };
@@ -29,6 +30,8 @@
 		A10000003 /* CaffeinateBarWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CaffeinateBarWidget.entitlements; sourceTree = "<group>"; };
 		A10000004 /* CaffeinateBarWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CaffeinateBarWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10000026 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = iconApp.icon; sourceTree = "<group>"; };
 		2D70E580DECC6D93690EFD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		812503D72961ED483033783D /* CaffeinateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateManager.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 				86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */,
 				812503D72961ED483033783D /* CaffeinateManager.swift */,
 				81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */,
+				A10000023 /* Localizable.strings */,
 				0918686C41373E3A6ED655E6 /* MenuBarView.swift */,
 				A10000001 /* SharedWidgetState.swift */,
 			);
@@ -129,6 +133,7 @@
 				A10000002 /* CaffeinateBarWidget.swift */,
 				A10000003 /* CaffeinateBarWidget.entitlements */,
 				A10000006 /* Info.plist */,
+				A10000025 /* Localizable.strings */,
 			);
 			path = CaffeinateBarWidget;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			knownRegions = (
 				Base,
 				en,
+				es,
 			);
 			mainGroup = C84F1EE2DBBAD49B1196333D;
 			minimizedProjectReferenceProxies = 1;
@@ -219,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10000022 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */,
-				132CA0D52FD7DF6100F9A2C3 /* iconApp.icon in Resources */,
+				A10000021 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +272,25 @@
 			targetProxy = A10000019 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A10000023 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A10000024 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A10000025 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A10000026 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A10000016 /* Debug */ = {

@@ -21,13 +21,13 @@ enum TimeoutPreset: Int, CaseIterable, Identifiable {
 
     var label: String {
         switch self {
-        case .none:       return "No timeout"
-        case .fifteen:    return "15 minutes"
-        case .thirty:     return "30 minutes"
-        case .oneHour:    return "1 hour"
-        case .twoHours:   return "2 hours"
-        case .fourHours:  return "4 hours"
-        case .eightHours: return "8 hours"
+        case .none:       return NSLocalizedString("No timeout", comment: "Timeout preset with no automatic stop")
+        case .fifteen:    return NSLocalizedString("15 minutes", comment: "Timeout preset")
+        case .thirty:     return NSLocalizedString("30 minutes", comment: "Timeout preset")
+        case .oneHour:    return NSLocalizedString("1 hour", comment: "Timeout preset")
+        case .twoHours:   return NSLocalizedString("2 hours", comment: "Timeout preset")
+        case .fourHours:  return NSLocalizedString("4 hours", comment: "Timeout preset")
+        case .eightHours: return NSLocalizedString("8 hours", comment: "Timeout preset")
         }
     }
 }
@@ -233,10 +233,12 @@ class CaffeinateManager: ObservableObject {
     private func postNotification(active: Bool) {
         guard allowNotifications else { return }
         let content = UNMutableNotificationContent()
-        content.title = active ? "Caffeinate Enabled ☕" : "Caffeinate Disabled 😴"
+        content.title = active
+            ? NSLocalizedString("Caffeinate Enabled ☕", comment: "Notification title when caffeinate starts")
+            : NSLocalizedString("Caffeinate Disabled 😴", comment: "Notification title when caffeinate stops")
         content.body  = active
-            ? "Mac will stay awake — \(arguments.joined(separator: " "))"
-            : "Normal sleep behavior restored."
+            ? String(format: NSLocalizedString("Computer will stay awake — %@", comment: "Notification body when caffeinate starts"), arguments.joined(separator: " "))
+            : NSLocalizedString("Normal sleep behavior restored.", comment: "Notification body when caffeinate stops")
         content.sound = .default
         UNUserNotificationCenter.current()
             .add(UNNotificationRequest(identifier: UUID().uuidString,

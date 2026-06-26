@@ -58,7 +58,7 @@ struct CaffeinateBarWidgetEntryView: View {
             }
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(entry.isActive ? "Awake" : "Sleep Allowed")
+                Text(entry.isActive ? LocalizedStringKey("Awake") : LocalizedStringKey("Sleep Allowed"))
                     .font(.headline)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
@@ -76,7 +76,7 @@ struct CaffeinateBarWidgetEntryView: View {
 
             if family != .systemSmall {
                 Spacer(minLength: 0)
-                Text(entry.isActive ? "Caffeinate is keeping this computer awake." : "Open CaffeinateBar to start a session.")
+                Text(entry.isActive ? LocalizedStringKey("Caffeinate is keeping this computer awake.") : LocalizedStringKey("Open CaffeinateBar to start a session."))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     .lineLimit(2)
@@ -93,8 +93,8 @@ struct CaffeinateBarWidget: Widget {
         StaticConfiguration(kind: kind, provider: CaffeinateProvider()) { entry in
             CaffeinateBarWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Caffeinate Bar")
-        .description("See whether Caffeinate is keeping your computer awake.")
+        .configurationDisplayName(LocalizedStringResource("Caffeinate Bar"))
+        .description(LocalizedStringResource("See whether Caffeinate is keeping your computer awake."))
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

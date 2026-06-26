@@ -1,0 +1,62 @@
+"No timeout" = "Sin temporizador";
+"15 minutes" = "15 minutos";
+"30 minutes" = "30 minutos";
+"1 hour" = "1 hora";
+"2 hours" = "2 horas";
+"4 hours" = "4 horas";
+"8 hours" = "8 horas";
+
+"Caffeinate Active" = "Caffeinate activo";
+"Sleep Allowed" = "Reposo permitido";
+"Running for %@" = "Activo por %@";
+"Display can sleep normally" = "La pantalla puede entrar en reposo normalmente";
+"Disable Caffeinate" = "Desactivar Caffeinate";
+"Enable Caffeinate" = "Activar Caffeinate";
+"ASSERTIONS" = "BLOQUEOS";
+"TIMEOUT" = "TEMPORIZADOR";
+"SETTINGS" = "AJUSTES";
+"Stop after" = "Detener después de";
+"GENERAL" = "GENERAL";
+"SLEEP & POWER" = "REPOSO Y ENERGÍA";
+"APPEARANCE" = "APARIENCIA";
+"Quit CaffeinateBar" = "Salir de CaffeinateBar";
+
+"Prevent display sleep" = "Evitar reposo de pantalla";
+"Keeps the screen fully lit — great for presentations or recipes." = "Mantiene la pantalla encendida; ideal para presentaciones o recetas.";
+"Prevent idle sleep" = "Evitar reposo por inactividad";
+"Mac keeps running in the background — perfect for downloads or remote connections." = "La computadora sigue trabajando en segundo plano; perfecto para descargas o conexiones remotas.";
+"Prevent disk sleep" = "Evitar reposo del disco";
+"Disk stays ready — useful for backups or long video exports." = "El disco se mantiene listo; útil para respaldos o exportaciones largas de video.";
+"Prevent system sleep" = "Evitar reposo del sistema";
+"No sleep at all — AC power only. Good for overnight server tasks." = "Sin reposo del sistema; solo con corriente. Útil para tareas largas durante la noche.";
+
+"Launch at Login" = "Abrir al iniciar sesión";
+"Starts CaffeinateBar automatically when you log in." = "Abre CaffeinateBar automáticamente cuando inicias sesión.";
+"Activate on Launch" = "Activar al abrir";
+"Automatically enables Caffeinate every time the app opens." = "Activa Caffeinate automáticamente cada vez que se abre la app.";
+"Left Click to Toggle" = "Clic izquierdo para activar";
+"One click on the icon toggles Caffeinate. Right-click still opens this window." = "Un clic en el icono activa o desactiva Caffeinate. El clic derecho sigue abriendo esta ventana.";
+"Shortcut  ⌥⌘K" = "Atajo  ⌥⌘K";
+"Toggle Caffeinate from anywhere with Option+Command+K." = "Activa o desactiva Caffeinate desde cualquier lugar con Option+Command+K.";
+"Allow Screen to Sleep" = "Permitir reposo de pantalla";
+"Screen can turn off while Mac stays awake — saves power during overnight tasks." = "La pantalla puede apagarse mientras la computadora sigue activa; ahorra energía durante tareas largas.";
+"Activate When Plugged In" = "Activar al conectar corriente";
+"Auto-enables Caffeinate whenever you connect the power adapter." = "Activa Caffeinate automáticamente cuando conectas el cargador.";
+"Deactivate When Unplugged" = "Desactivar al desconectar";
+"Auto-disables Caffeinate when the charger is removed to save battery." = "Desactiva Caffeinate automáticamente al desconectar el cargador para ahorrar batería.";
+"Show Notifications" = "Mostrar notificaciones";
+"Get a system notification when Caffeinate turns on or off." = "Recibe una notificación cuando Caffeinate se active o desactive.";
+"Color Icon" = "Icono a color";
+"Show a colored icon (green when active) instead of the system default." = "Muestra un icono a color (verde cuando está activo) en vez del estilo predeterminado del sistema.";
+
+"Caffeinate Enabled ☕" = "Caffeinate activado ☕";
+"Caffeinate Disabled 😴" = "Caffeinate desactivado 😴";
+"Computer will stay awake — %@" = "La computadora permanecerá activa — %@";
+"Normal sleep behavior restored." = "Se restauró el reposo normal.";
+
+"Awake" = "Activa";
+"Tap to open" = "Toca para abrir";
+"Caffeinate is keeping this computer awake." = "Caffeinate mantiene esta computadora activa.";
+"Open CaffeinateBar to start a session." = "Abre CaffeinateBar para iniciar una sesión.";
+"Caffeinate Bar" = "Caffeinate Bar";
+"See whether Caffeinate is keeping your computer awake." = "Consulta si Caffeinate mantiene tu computadora activa.";
