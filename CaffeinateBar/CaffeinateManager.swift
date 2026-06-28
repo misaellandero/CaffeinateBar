@@ -1,3 +1,4 @@
+import AppKit
 import Foundation
 import Combine
 import IOKit.ps
@@ -30,6 +31,18 @@ enum TimeoutPreset: Int, CaseIterable, Identifiable {
         case .eightHours: return NSLocalizedString("8 hours", comment: "Timeout preset")
         }
     }
+}
+
+// MARK: - CancellationReason
+
+enum CancellationReason {
+    case user           // toggled off by user
+    case timeout        // caffeinate -t timer expired
+    case systemSleep    // lid close or sleep
+    case systemShutdown // power off / restart
+    case lowBattery     // battery below threshold
+    case externalKill   // killed by external signal (catch-all)
+    case unplug         // power adapter removed (deactivateOnUnplug)
 }
 
 // MARK: - CaffeinateManager
@@ -99,6 +112,9 @@ class CaffeinateManager: ObservableObject {
     private var timer: AnyCancellable?
     private var powerRunLoopSource: CFRunLoopSource?
     private let ratingPrompt = RatingPromptController()
+    private var workspaceObservers: [NSObjectProtocol] = []
+    private var lowBatteryAlertFired = false
+    private let lowBatteryThreshold = 10
 
     // MARK: Init
 
@@ -119,6 +135,7 @@ class CaffeinateManager: ObservableObject {
         deactivateOnUnplug  = ud.object(forKey: "deactivateOnUnplug")  as? Bool ?? false
 
         updatePowerMonitoring()
+        registerWorkspaceObservers()
     }
 
     // MARK: Computed
@@ -161,12 +178,12 @@ class CaffeinateManager: ObservableObject {
         }
     }
 
-    func disable() {
+    func disable(reason: CancellationReason = .user) {
         let wasActive = isActive
         process?.terminate()
         process = nil
         if wasActive { completeActiveSession() }
-        if wasActive { postNotification(active: false) }
+        if wasActive { postCancellationNotification(reason: reason) }
     }
 
     func toggle() { isActive ? disable() : enable() }
@@ -186,7 +203,9 @@ class CaffeinateManager: ObservableObject {
     private func handleCaffeinateProcessEnded(_ endedProcess: Process) {
         guard process === endedProcess else { return }
         process = nil
+        let reason: CancellationReason = endedProcess.terminationReason == .exit ? .timeout : .externalKill
         completeActiveSession()
+        postCancellationNotification(reason: reason)
     }
 
     private func completeActiveSession() {
@@ -231,15 +250,43 @@ class CaffeinateManager: ObservableObject {
     }
 
     private func postNotification(active: Bool) {
+        guard active, allowNotifications else { return }
+        let content = UNMutableNotificationContent()
+        content.title = NSLocalizedString("Caffeinate Enabled ☕", comment: "Notification title when caffeinate starts")
+        content.body  = String(format: NSLocalizedString("Computer will stay awake — %@", comment: "Notification body when caffeinate starts"), arguments.joined(separator: " "))
+        content.sound = .default
+        UNUserNotificationCenter.current()
+            .add(UNNotificationRequest(identifier: UUID().uuidString,
+                                       content: content, trigger: nil))
+    }
+
+    private func postCancellationNotification(reason: CancellationReason) {
         guard allowNotifications else { return }
         let content = UNMutableNotificationContent()
-        content.title = active
-            ? NSLocalizedString("Caffeinate Enabled ☕", comment: "Notification title when caffeinate starts")
-            : NSLocalizedString("Caffeinate Disabled 😴", comment: "Notification title when caffeinate stops")
-        content.body  = active
-            ? String(format: NSLocalizedString("Computer will stay awake — %@", comment: "Notification body when caffeinate starts"), arguments.joined(separator: " "))
-            : NSLocalizedString("Normal sleep behavior restored.", comment: "Notification body when caffeinate stops")
         content.sound = .default
+        switch reason {
+        case .user:
+            content.title = NSLocalizedString("Caffeinate Disabled 😴", comment: "Notification when user stops caffeinate")
+            content.body  = NSLocalizedString("Normal sleep behavior restored.", comment: "")
+        case .timeout:
+            content.title = NSLocalizedString("Caffeinate Disabled 😴", comment: "Notification when caffeinate times out")
+            content.body  = NSLocalizedString("Session timed out. Normal sleep behavior restored.", comment: "")
+        case .systemSleep:
+            content.title = NSLocalizedString("Caffeinate Cancelled 💤", comment: "Notification when Mac goes to sleep")
+            content.body  = NSLocalizedString("Mac went to sleep — session ended.", comment: "")
+        case .systemShutdown:
+            content.title = NSLocalizedString("Caffeinate Cancelled 🛑", comment: "Notification when Mac shuts down")
+            content.body  = NSLocalizedString("System shutdown detected — session ended.", comment: "")
+        case .lowBattery:
+            content.title = NSLocalizedString("Caffeinate Cancelled 🪫", comment: "Notification when battery is low")
+            content.body  = NSLocalizedString("Battery is low — session ended to preserve power.", comment: "")
+        case .externalKill:
+            content.title = NSLocalizedString("Caffeinate Stopped ⚡", comment: "Notification when caffeinate is killed externally")
+            content.body  = NSLocalizedString("Caffeinate stopped unexpectedly.", comment: "")
+        case .unplug:
+            content.title = NSLocalizedString("Caffeinate Disabled 🔌", comment: "Notification when power adapter is unplugged")
+            content.body  = NSLocalizedString("Power adapter unplugged — session ended.", comment: "")
+        }
         UNUserNotificationCenter.current()
             .add(UNNotificationRequest(identifier: UUID().uuidString,
                                        content: content, trigger: nil))
@@ -248,11 +295,7 @@ class CaffeinateManager: ObservableObject {
     // MARK: Power Source Monitoring
 
     private func updatePowerMonitoring() {
-        if activateOnACPower || deactivateOnUnplug {
-            startPowerMonitoring()
-        } else {
-            stopPowerMonitoring()
-        }
+        startPowerMonitoring() // always monitor — needed for low battery detection
     }
 
     private func startPowerMonitoring() {
@@ -279,13 +322,52 @@ class CaffeinateManager: ObservableObject {
         return (ref.takeUnretainedValue() as String) == kIOPSACPowerValue
     }
 
-    private func handlePowerChange() {
-        let onAC = isOnACPower()
-        if activateOnACPower   && onAC  && !isActive { enable()  }
-        if deactivateOnUnplug  && !onAC && isActive  { disable() }
+    private func currentBatteryPercentage() -> Int? {
+        let info = IOPSCopyPowerSourcesInfo().takeRetainedValue()
+        let list = IOPSCopyPowerSourcesList(info).takeRetainedValue() as [AnyObject]
+        for item in list {
+            guard let desc = IOPSGetPowerSourceDescription(info, item)?.takeUnretainedValue() as? [String: Any],
+                  let capacity = desc[kIOPSCurrentCapacityKey] as? Int,
+                  let maxCapacity = desc[kIOPSMaxCapacityKey] as? Int,
+                  maxCapacity > 0 else { continue }
+            return capacity * 100 / maxCapacity
+        }
+        return nil
     }
 
-    deinit { disable(); stopPowerMonitoring() }
+    private func handlePowerChange() {
+        let onAC = isOnACPower()
+        if activateOnACPower  && onAC  && !isActive { enable() }
+        if deactivateOnUnplug && !onAC && isActive  { disable(reason: .unplug) }
+        if isActive && !onAC {
+            if let pct = currentBatteryPercentage(), pct <= lowBatteryThreshold, !lowBatteryAlertFired {
+                lowBatteryAlertFired = true
+                disable(reason: .lowBattery)
+            }
+        }
+        if onAC { lowBatteryAlertFired = false }
+    }
+
+    private func registerWorkspaceObservers() {
+        let nc = NSWorkspace.shared.notificationCenter
+        workspaceObservers = [
+            nc.addObserver(forName: NSWorkspace.willSleepNotification, object: nil, queue: .main) { [weak self] _ in
+                guard let self, self.isActive else { return }
+                self.disable(reason: .systemSleep)
+            },
+            nc.addObserver(forName: NSWorkspace.willPowerOffNotification, object: nil, queue: .main) { [weak self] _ in
+                guard let self, self.isActive else { return }
+                self.disable(reason: .systemShutdown)
+            }
+        ]
+    }
+
+    deinit {
+        disable()
+        stopPowerMonitoring()
+        let nc = NSWorkspace.shared.notificationCenter
+        workspaceObservers.forEach { nc.removeObserver($0) }
+    }
 }
 
 // MARK: - RatingPromptController
