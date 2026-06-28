@@ -53,6 +53,17 @@
 "Caffeinate Disabled 😴" = "Caffeinate desactivado 😴";
 "Computer will stay awake — %@" = "La computadora permanecerá activa — %@";
 "Normal sleep behavior restored." = "Se restauró el reposo normal.";
+"Session timed out. Normal sleep behavior restored." = "La sesión expiró. Se restauró el reposo normal.";
+"Caffeinate Cancelled 💤" = "Caffeinate cancelado 💤";
+"Mac went to sleep — session ended." = "La Mac entró en reposo — sesión finalizada.";
+"Caffeinate Cancelled 🛑" = "Caffeinate cancelado 🛑";
+"System shutdown detected — session ended." = "Se detectó un apagado del sistema — sesión finalizada.";
+"Caffeinate Cancelled 🪫" = "Caffeinate cancelado 🪫";
+"Battery is low — session ended to preserve power." = "Batería baja — sesión finalizada para conservar energía.";
+"Caffeinate Stopped ⚡" = "Caffeinate detenido ⚡";
+"Caffeinate stopped unexpectedly." = "Caffeinate se detuvo de forma inesperada.";
+"Caffeinate Disabled 🔌" = "Caffeinate desactivado 🔌";
+"Power adapter unplugged — session ended." = "Se desconectó el cargador — sesión finalizada.";
 
 "Awake" = "Activa";
 "Tap to open" = "Toca para abrir";
