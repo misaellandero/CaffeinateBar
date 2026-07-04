@@ -48,7 +48,7 @@ struct MenuBarView: View {
             }
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(manager.isActive ? "Caffeinate Active" : "Sleep Allowed")
+                Text(LocalizedStringKey(manager.isActive ? "Caffeinate Active" : "Sleep Allowed"))
                     .font(.headline)
                 if manager.isActive {
                     Text(String(format: NSLocalizedString("Running for %@", comment: "Status subtitle with elapsed active time"), formattedElapsed))
@@ -77,7 +77,7 @@ struct MenuBarView: View {
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(manager.isActive ? .orange : .yellow)
                     .frame(width: 24)
-                Text(manager.isActive ? "Disable Caffeinate" : "Enable Caffeinate")
+                Text(LocalizedStringKey(manager.isActive ? "Disable Caffeinate" : "Enable Caffeinate"))
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
                 Text("⌘K").font(.caption).foregroundStyle(.tertiary)
