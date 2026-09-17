@@ -292,36 +292,19 @@ class CaffeinateManager: ObservableObject {
 
 private final class RatingPromptController {
     private enum Key {
-        static let firstLaunchDate = "rating.firstLaunchDate"
-        static let meaningfulSessions = "rating.meaningfulSessions"
-        static let totalActiveSeconds = "rating.totalActiveSeconds"
+        static let completedSessions = "rating.completedSessions"
         static let lastRequestedVersion = "rating.lastRequestedVersion"
         static let lastRequestDate = "rating.lastRequestDate"
     }
 
     private let ud = UserDefaults.standard
-    private let minimumSessionDuration = 120
-    private let minimumMeaningfulSessions = 3
-    private let minimumTotalActiveSeconds = 600
-    private let minimumDaysSinceFirstLaunch: TimeInterval = 24 * 60 * 60
+    private let minimumCompletedSessions = 2
     private let minimumDaysBetweenRequests: TimeInterval = 90 * 24 * 60 * 60
-
-    init() {
-        if ud.object(forKey: Key.firstLaunchDate) == nil {
-            ud.set(Date(), forKey: Key.firstLaunchDate)
-        }
-    }
 
     func recordCompletedSession(duration: Int) {
         guard duration > 0 else { return }
-
-        let totalActiveSeconds = ud.integer(forKey: Key.totalActiveSeconds) + duration
-        ud.set(totalActiveSeconds, forKey: Key.totalActiveSeconds)
-
-        if duration >= minimumSessionDuration {
-            let sessions = ud.integer(forKey: Key.meaningfulSessions) + 1
-            ud.set(sessions, forKey: Key.meaningfulSessions)
-        }
+        let sessions = ud.integer(forKey: Key.completedSessions) + 1
+        ud.set(sessions, forKey: Key.completedSessions)
 
         requestReviewIfAppropriate()
     }
@@ -340,11 +323,7 @@ private final class RatingPromptController {
     }
 
     private var hasEnoughRealUse: Bool {
-        let firstLaunchDate = ud.object(forKey: Key.firstLaunchDate) as? Date ?? Date()
-        let appAge = Date().timeIntervalSince(firstLaunchDate)
-        return appAge >= minimumDaysSinceFirstLaunch
-            && ud.integer(forKey: Key.meaningfulSessions) >= minimumMeaningfulSessions
-            && ud.integer(forKey: Key.totalActiveSeconds) >= minimumTotalActiveSeconds
+        ud.integer(forKey: Key.completedSessions) >= minimumCompletedSessions
     }
 
     private var hasNotRequestedThisVersion: Bool {

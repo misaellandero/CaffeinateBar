@@ -7,39 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812503D72961ED483033783D /* CaffeinateManager.swift */; };
+		8631D1025512927D48E26BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70E580DECC6D93690EFD05 /* AppDelegate.swift */; };
 		A10000012 /* SharedWidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001 /* SharedWidgetState.swift */; };
 		A10000013 /* CaffeinateBarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000002 /* CaffeinateBarWidget.swift */; };
 		A10000014 /* SharedWidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001 /* SharedWidgetState.swift */; };
 		A10000015 /* CaffeinateBarWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A10000004 /* CaffeinateBarWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10000021 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000023 /* Localizable.strings */; };
 		A10000022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000025 /* Localizable.strings */; };
-		6338C1BAA858D481DF300037 /* CaffeinateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812503D72961ED483033783D /* CaffeinateManager.swift */; };
-		8631D1025512927D48E26BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70E580DECC6D93690EFD05 /* AppDelegate.swift */; };
+		A10000029 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000027 /* Localizable.strings */; };
+		A10000030 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000028 /* Localizable.strings */; };
 		CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */; };
 		D3D5ECF53AC9BA2CEB9C04E8 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918686C41373E3A6ED655E6 /* MenuBarView.swift */; };
 		D7A40CD5DA435831E79BFB5C /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */; };
 		E1099528E4EC3260233D8EE7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCEDE027E8543C98073BCE4 /* IOKit.framework */; };
 		E1F7DC538684416376E69DFA /* CaffeinateBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		044633F66D4C46BF4E78B4E9 /* CaffeinateBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeinateBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0918686C41373E3A6ED655E6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
-		A10000001 /* SharedWidgetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetState.swift; sourceTree = "<group>"; };
-		A10000002 /* CaffeinateBarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarWidget.swift; sourceTree = "<group>"; };
-		A10000003 /* CaffeinateBarWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CaffeinateBarWidget.entitlements; sourceTree = "<group>"; };
-		A10000004 /* CaffeinateBarWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CaffeinateBarWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A10000024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A10000026 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = iconApp.icon; sourceTree = "<group>"; };
-		2D70E580DECC6D93690EFD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		812503D72961ED483033783D /* CaffeinateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateManager.swift; sourceTree = "<group>"; };
-		81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
-		86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarApp.swift; sourceTree = "<group>"; };
-		DBCEDE027E8543C98073BCE4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-/* End PBXFileReference section */
 
 /* Begin PBXContainerItemProxy section */
 		A10000019 /* PBXContainerItemProxy */ = {
@@ -65,6 +48,27 @@
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+/* Begin PBXFileReference section */
+		044633F66D4C46BF4E78B4E9 /* CaffeinateBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaffeinateBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0918686C41373E3A6ED655E6 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		132CA0D42FD7DF6100F9A2C3 /* iconApp.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = iconApp.icon; sourceTree = "<group>"; };
+		2D70E580DECC6D93690EFD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		812503D72961ED483033783D /* CaffeinateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateManager.swift; sourceTree = "<group>"; };
+		81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarApp.swift; sourceTree = "<group>"; };
+		A10000001 /* SharedWidgetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetState.swift; sourceTree = "<group>"; };
+		A10000002 /* CaffeinateBarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarWidget.swift; sourceTree = "<group>"; };
+		A10000003 /* CaffeinateBarWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CaffeinateBarWidget.entitlements; sourceTree = "<group>"; };
+		A10000004 /* CaffeinateBarWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CaffeinateBarWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A10000027 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10000028 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10000024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A10000026 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DBCEDE027E8543C98073BCE4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		A10000007 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -84,6 +88,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A10000005 /* CaffeinateBarWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A10000002 /* CaffeinateBarWidget.swift */,
+				A10000003 /* CaffeinateBarWidget.entitlements */,
+				A10000006 /* Info.plist */,
+				A10000028 /* Localizable.strings */,
+				A10000025 /* Localizable.strings */,
+			);
+			path = CaffeinateBarWidget;
+			sourceTree = "<group>";
+		};
 		A18AD4F892817385EBAAB99B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +127,7 @@
 				86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */,
 				812503D72961ED483033783D /* CaffeinateManager.swift */,
 				81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */,
+				A10000027 /* Localizable.strings */,
 				A10000023 /* Localizable.strings */,
 				0918686C41373E3A6ED655E6 /* MenuBarView.swift */,
 				A10000001 /* SharedWidgetState.swift */,
@@ -125,17 +142,6 @@
 				DBCEDE027E8543C98073BCE4 /* IOKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A10000005 /* CaffeinateBarWidget */ = {
-			isa = PBXGroup;
-			children = (
-				A10000002 /* CaffeinateBarWidget.swift */,
-				A10000003 /* CaffeinateBarWidget.entitlements */,
-				A10000006 /* Info.plist */,
-				A10000025 /* Localizable.strings */,
-			);
-			path = CaffeinateBarWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +209,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
 				es,
 			);
@@ -225,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10000029 /* Localizable.strings in Resources */,
 				A10000022 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */,
+				A10000030 /* Localizable.strings in Resources */,
 				A10000021 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +284,7 @@
 		A10000023 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
+				A10000027 /* en */,
 				A10000024 /* es */,
 			);
 			name = Localizable.strings;
@@ -285,6 +293,7 @@
 		A10000025 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
+				A10000028 /* en */,
 				A10000026 /* es */,
 			);
 			name = Localizable.strings;
@@ -293,58 +302,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A10000016 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63AJC847ZW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.9;
-			};
-			name = Debug;
-		};
-		A10000017 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 63AJC847ZW;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.9;
-			};
-			name = Release;
-		};
 		23CD392F7E4F605FC466A13F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,6 +445,58 @@
 				SWIFT_VERSION = 5.9;
 			};
 			name = Debug;
+		};
+		A10000016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63AJC847ZW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		A10000017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63AJC847ZW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
 		};
 		E94674A79058D8CD9AF05190 /* Release */ = {
 			isa = XCBuildConfiguration;
