@@ -6,3 +6,4 @@ DerivedData/
 *.xcworkspace/xcuserdata/
 build/
 dist/
+.asc/artifacts/
