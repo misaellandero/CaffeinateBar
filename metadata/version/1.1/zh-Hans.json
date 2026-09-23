@@ -1,0 +1,6 @@
+{
+  "marketingUrl": "https://github.com/misaellandero/CaffeinateBar",
+  "promotionalText": "新增桌面小组件、改进支持选项、优化入门体验，并扩展本地化覆盖。",
+  "supportUrl": "https://github.com/misaellandero/CaffeinateBar/issues",
+  "whatsNew": "新增桌面小组件：直接在桌面查看 CaffeinateBar 是否正在让电脑保持唤醒，并在空间允许时使用快捷控制。\n\n支持功能改进：App Store 版本现在包含打赏选项，直接下载版本继续保留 PayPal 支持链接。\n\n更清晰的首次体验：教程可随时重新打开，评分提示会等到您完成一次真实会话后再出现。\n\n我们还扩展了整个 app 的本地化覆盖。"
+}
