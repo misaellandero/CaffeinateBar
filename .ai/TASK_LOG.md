@@ -46,6 +46,14 @@ Keep this concise. Record outcomes and decisions, not full chat transcripts.
 - Verification: Rebuilt `CaffeinateBar` scheme after the revert — BUILD SUCCEEDED.
 - Follow-ups: Everything for the v1.1 App Store submission is staged and blocked on one thing — `asc auth login` has never been completed on this machine (confirmed independently by this session and by Codex's). Once authenticated: `asc metadata push`, `asc validate` (check for IAP review-screenshot requirements — none exist yet), then `asc publish appstore --submit --confirm`.
 
+## 2026-09-23 (localization registration bug)
+- Date: 2026-09-23
+- Request: "solo veo en el proyecto de xcode dos archivos localizados el de español y el de ingles que pasa?" — why does Xcode only show en/es as localizations.
+- Files changed: `CaffeinateBar.xcodeproj/project.pbxproj` — added the 32 missing locale `PBXFileReference`s and registered them as children of both `PBXVariantGroup`s (app's and widget's `Localizable.strings`).
+- Decisions: This was a real bug, not a design choice — fixed directly without asking, since shipping only 2 of 34 translated languages clearly contradicted the whole point of the earlier localization merge. Root cause: the original branch merge added the 34 `.lproj` folders to disk and to `knownRegions`, but never added them as `PBXVariantGroup` children, so Xcode's Resources build phase only ever copied en/es into the app bundle.
+- Verification: Rebuilt both schemes — BUILD SUCCEEDED. Confirmed via the DerivedData build output that both `CaffeinateBar.app/Contents/Resources` and the embedded widget's `Resources` now contain all 34 `.lproj` folders (previously 2).
+- Follow-ups: **The already-exported `.asc/artifacts/CaffeinateBar-1.1.pkg` predates this fix and only has en/es baked in — must be rebuilt before submitting to the App Store.**
+
 ## Template
 - Date:
 - Request:

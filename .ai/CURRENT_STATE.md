@@ -16,6 +16,7 @@ macOS menu bar app (CaffeinateBar) + CaffeinateBarWidget extension. Version bump
 
 ## Known Issues
 - Widget interactivity and onboarding were implemented but **not visually verified live** — see Verification Notes. `appStoreReceiptURL` (used by `AppDistribution`) is deprecated in macOS 15 in favor of `AppTransaction`; kept intentionally (see comment in `TipJarStore.swift`) since the replacement is async/throwing with unclear behavior for non-App-Store builds.
+- **Fixed 2026-09-23**: only `en`/`es` were ever registered as children of the `Localizable.strings` `PBXVariantGroup` (app + widget) despite all 34 `.lproj` folders existing on disk since the original localization merge — the other 32 languages, including Codex's SUPPORT/HELP translations, were never actually copied into the built app bundle. Confirmed by inspecting `.asc/artifacts/CaffeinateBar-1.1.xcarchive` (only 2 `.lproj` folders present). Fixed by registering all 32 missing locales in both `PBXVariantGroup`s; verified the rebuilt app/widget bundles now contain all 34 `.lproj` folders. **The staged `.asc/artifacts/CaffeinateBar-1.1.pkg` is now stale and must be rebuilt** (`asc xcode archive` + `asc xcode export`) before submitting — it was exported before this fix.
 - No IAP review screenshots exist yet for the 3 tip-jar consumables — Apple may require one per new in-app purchase before it can go to review. Not confirmed either way; `asc validate` (once authenticated) should surface this if it's blocking.
 - `asc auth` has no stored credentials on this machine (confirmed independently by this session and by a separate Codex session — same blocker across both) — nothing that touches the App Store Connect API (metadata push, `asc validate`, `asc publish appstore`) can run until an API key is added via `asc auth login`.
 - Consider deleting the now-merged remote branch `claude/caffeinate-cancel-notifications-vjy5jr` on GitHub (not done — ask before deleting a remote branch).
@@ -24,10 +25,11 @@ macOS menu bar app (CaffeinateBar) + CaffeinateBarWidget extension. Version bump
 - Final push to submit v1.1 to the App Store — everything is staged (archive, pkg, metadata, IAPs), waiting only on ASC API auth.
 
 ## Next Steps
-1. Run `asc auth login` (API key with Admin role — needed for certs too, see earlier IAP/Developer-ID work).
-2. `asc metadata push --app <APP_ID> --version "1.1" --platform MAC_OS --dir ./metadata` (dry-run first).
-3. `asc validate --app <APP_ID> --version "1.1"` — canonical readiness report; check specifically for IAP review-screenshot requirements.
-4. `asc publish appstore --app <APP_ID> --pkg .asc/artifacts/CaffeinateBar-1.1.pkg --version 1.1 --build-number 2 --metadata-dir ./metadata --submit --confirm`.
+1. **Rebuild the release archive/pkg** — the current `.asc/artifacts/CaffeinateBar-1.1.pkg` predates the localization fix and only has en/es baked in.
+2. Run `asc auth login` (API key with Admin role — needed for certs too, see earlier IAP/Developer-ID work).
+3. `asc metadata push --app <APP_ID> --version "1.1" --platform MAC_OS --dir ./metadata` (dry-run first).
+4. `asc validate --app <APP_ID> --version "1.1"` — canonical readiness report; check specifically for IAP review-screenshot requirements.
+5. `asc publish appstore --app <APP_ID> --pkg .asc/artifacts/CaffeinateBar-1.1.pkg --version 1.1 --build-number 2 --metadata-dir ./metadata --submit --confirm`.
 5. Manually verify onboarding (reset via `defaults delete com.local.CaffeinateBar onboarding.completed` then relaunch, or SETTINGS → HELP → "Show Tutorial") and the widget's buttons (add/refresh from the widget gallery on macOS 14+) — still not done via automation, see Verification Notes.
 6. Consider deleting the merged remote branch `claude/caffeinate-cancel-notifications-vjy5jr` (ask first).
 
