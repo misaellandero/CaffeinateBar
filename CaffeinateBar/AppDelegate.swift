@@ -9,13 +9,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var popover: NSPopover!
     private var hotkeyManager: HotkeyManager?
     private var cancellables = Set<AnyCancellable>()
+    private var notificationObservers: [NSObjectProtocol] = []
     private var suppressNextOpen = false
+    private let onboardingWindowController = OnboardingWindowController()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         setupStatusItem()
         setupPopover()
         setupObservers()
         if manager.activateOnLaunch { manager.enable() }
+        consumePendingWidgetAction()
+        onboardingWindowController.showIfNeeded()
+    }
+
+    func applicationDidBecomeActive(_ notification: Notification) {
+        consumePendingWidgetAction()
+    }
+
+    // MARK: - Widget Actions
+
+    /// Picks up an action requested from the widget's interactive buttons. `openAppWhenRun`
+    /// on the widget's AppIntent brings this app to the front either at cold launch
+    /// (handled above) or by activating an already-running instance (handled here).
+    private func consumePendingWidgetAction() {
+        guard let action = SharedWidgetState.consumePendingAction() else { return }
+        switch action {
+        case .toggle:
+            manager.toggle()
+        case .cancelTimeout:
+            if manager.isActive { manager.disable(reason: .user) }
+        }
     }
 
     func application(_ application: NSApplication, open urls: [URL]) {
@@ -133,6 +156,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         .receive(on: DispatchQueue.main)
         .sink { [weak self] in self?.updateIcon() }
         .store(in: &cancellables)
+
+        notificationObservers.append(
+            NotificationCenter.default.addObserver(forName: .showOnboardingRequested, object: nil, queue: .main) { [weak self] _ in
+                self?.onboardingWindowController.show()
+            }
+        )
 
         manager.$globalHotkeyEnabled
             .receive(on: DispatchQueue.main)

@@ -71,3 +71,26 @@
 "Open CaffeinateBar to start a session." = "Abre CaffeinateBar para iniciar una sesión.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Consulta si Caffeinate mantiene tu computadora activa.";
+
+"SUPPORT" = "APOYAR";
+"Support CaffeinateBar" = "Apoyar CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Tu propina ayuda a que CaffeinateBar siga mejorando.";
+"Tip via PayPal" = "Dejar propina vía PayPal";
+"Tips aren't available right now." = "Las propinas no están disponibles por ahora.";
+"Thank you for your support! ☕️" = "¡Gracias por tu apoyo! ☕️";
+
+"HELP" = "AYUDA";
+"Show Tutorial" = "Ver tutorial";
+"Welcome to CaffeinateBar" = "Bienvenido a CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Mantén tu Mac despierta directo desde la barra de menú, sin ventanas ni desorden.";
+"Choose What Stays Awake" = "Elige qué se mantiene activo";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Abre BLOQUEOS para elegir exactamente qué evita que entre en reposo Caffeinate: pantalla, inactividad, disco o el sistema completo.";
+"Set an Auto-Stop Timer" = "Configura un temporizador automático";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Abre TEMPORIZADOR para que Caffeinate se desactive solo después de un tiempo determinado, sin que tengas que recordar apagarlo.";
+"Check Status From Your Desktop" = "Consulta el estado desde tu escritorio";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Agrega el widget de CaffeinateBar para ver tu estado de un vistazo, y actívalo o desactívalo directo desde ahí.";
+"Enjoying CaffeinateBar?" = "¿Te gusta CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Encuentra la sección APOYAR cuando quieras para dejarle una propina al developer.";
+"Skip" = "Omitir";
+"Next" = "Siguiente";
+"Get Started" = "Empezar";

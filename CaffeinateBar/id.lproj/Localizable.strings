@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Buka CaffeinateBar untuk memulai sesi.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Lihat apakah Caffeinate menjaga komputer Anda tetap terjaga.";
+
+"SUPPORT" = "DUKUNGAN";
+"Support CaffeinateBar" = "Dukung CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Tip Anda membantu CaffeinateBar terus berkembang.";
+"Tip via PayPal" = "Tip lewat PayPal";
+"Tips aren't available right now." = "Tip belum tersedia saat ini.";
+"Thank you for your support! ☕️" = "Terima kasih atas dukungan Anda! ☕️";
+"HELP" = "BANTUAN";
+"Show Tutorial" = "Tampilkan tutorial";
+"Welcome to CaffeinateBar" = "Selamat datang di CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Jaga Mac tetap menyala langsung dari bar menu, tanpa jendela dan tanpa ribet.";
+"Choose What Stays Awake" = "Pilih yang tetap menyala";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Buka ASSERTIONS untuk memilih apa yang dicegah Caffeinate agar tidak tidur: layar, idle sistem, disk, atau seluruh sistem.";
+"Set an Auto-Stop Timer" = "Atur timer berhenti otomatis";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Buka TIMEOUT agar Caffeinate mati sendiri setelah waktu tertentu.";
+"Check Status From Your Desktop" = "Periksa status dari desktop";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Tambahkan widget CaffeinateBar untuk melihat status sekilas dan menyalakan atau mematikan Caffeinate langsung dari sana.";
+"Enjoying CaffeinateBar?" = "Suka CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Buka bagian DUKUNGAN kapan saja untuk memberi tip kepada developer.";
+"Skip" = "Lewati";
+"Next" = "Berikutnya";
+"Get Started" = "Mulai";

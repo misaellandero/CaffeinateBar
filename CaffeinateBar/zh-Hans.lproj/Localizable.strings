@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "打开 CaffeinateBar 以开始会话。";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "查看 Caffeinate 是否正在阻止您的电脑进入睡眠。";
+
+"SUPPORT" = "支持";
+"Support CaffeinateBar" = "支持 CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "你的打赏有助于持续改进 CaffeinateBar。";
+"Tip via PayPal" = "通过 PayPal 打赏";
+"Tips aren't available right now." = "暂时无法打赏。";
+"Thank you for your support! ☕️" = "感谢你的支持！☕️";
+"HELP" = "帮助";
+"Show Tutorial" = "显示教程";
+"Welcome to CaffeinateBar" = "欢迎使用 CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "直接从菜单栏让 Mac 保持唤醒，没有窗口，也不杂乱。";
+"Choose What Stays Awake" = "选择保持唤醒的内容";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "打开 ASSERTIONS，选择 Caffeinate 要阻止进入睡眠的内容：显示器、系统空闲、磁盘或整个系统。";
+"Set an Auto-Stop Timer" = "设置自动停止计时器";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "打开 TIMEOUT，让 Caffeinate 在指定时间后自动关闭。";
+"Check Status From Your Desktop" = "从桌面查看状态";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "添加 CaffeinateBar 小组件，一眼查看状态，并直接从小组件开启或关闭 Caffeinate。";
+"Enjoying CaffeinateBar?" = "喜欢 CaffeinateBar 吗？";
+"Find the SUPPORT section any time to leave the developer a tip." = "随时打开支持部分给开发者打赏。";
+"Skip" = "跳过";
+"Next" = "下一步";
+"Get Started" = "开始";

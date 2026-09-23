@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Otvorte CaffeinateBar a spustite reláciu.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Zistite, či Caffeinate udržuje váš počítač aktívny.";
+
+"SUPPORT" = "PODPORA";
+"Support CaffeinateBar" = "Podporit CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Vas prispevok pomaha CaffeinateBar dalej zlepsovat.";
+"Tip via PayPal" = "Prispiet cez PayPal";
+"Tips aren't available right now." = "Prispevky teraz nie su dostupne.";
+"Thank you for your support! ☕️" = "Dakujeme za podporu! ☕️";
+"HELP" = "POMOC";
+"Show Tutorial" = "Zobrazit navod";
+"Welcome to CaffeinateBar" = "Vitajte v CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Udrzte Mac aktivny priamo z panela menu, bez okien a neporiadku.";
+"Choose What Stays Awake" = "Vyberte, co zostane aktivne";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Otvorte ASSERTIONS a vyberte, comu Caffeinate zabrani v uspani: displeju, necinnosti systemu, disku alebo celemu systemu.";
+"Set an Auto-Stop Timer" = "Nastavit casovac automatickeho zastavenia";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Otvorte TIMEOUT, aby sa Caffeinate po nastavenom case sam vypol.";
+"Check Status From Your Desktop" = "Skontrolujte stav z pracovnej plochy";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Pridajte widget CaffeinateBar, rychlo uvidite stav a mozete Caffeinate zapnut alebo vypnut priamo z neho.";
+"Enjoying CaffeinateBar?" = "Paci sa vam CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Sekciu PODPORA najdete kedykolvek a mozete v nej nechat developerovi prispevok.";
+"Skip" = "Preskocit";
+"Next" = "Dalej";
+"Get Started" = "Zacat";

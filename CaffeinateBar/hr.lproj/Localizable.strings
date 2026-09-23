@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Otvorite CaffeinateBar za pokretanje sesije.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Provjeri drži li Caffeinate tvoje računalo aktivnim.";
+
+"SUPPORT" = "PODRSKA";
+"Support CaffeinateBar" = "Podrzi CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Tvoja napojnica pomaze da se CaffeinateBar nastavi poboljsavati.";
+"Tip via PayPal" = "Napojnica putem PayPala";
+"Tips aren't available right now." = "Napojnice trenutno nisu dostupne.";
+"Thank you for your support! ☕️" = "Hvala na podrsci! ☕️";
+"HELP" = "POMOC";
+"Show Tutorial" = "Prikazi vodic";
+"Welcome to CaffeinateBar" = "Dobrodosli u CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Drzi Mac budnim izravno iz trake izbornika, bez prozora i nereda.";
+"Choose What Stays Awake" = "Odaberi sto ostaje budno";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Otvori ASSERTIONS i odaberi sto Caffeinate sprjecava da zaspi: zaslon, mirovanje sustava, disk ili cijeli sustav.";
+"Set an Auto-Stop Timer" = "Postavi automatsko zaustavljanje";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Otvori TIMEOUT kako bi se Caffeinate sam iskljucio nakon odredenog vremena.";
+"Check Status From Your Desktop" = "Provjeri status s radne povrsine";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Dodaj widget CaffeinateBar za brzi pregled statusa i ukljucivanje ili iskljucivanje Caffeinatea izravno iz njega.";
+"Enjoying CaffeinateBar?" = "Svida ti se CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "U odjeljku PODRSKA mozes bilo kada ostaviti napojnicu developeru.";
+"Skip" = "Preskoci";
+"Next" = "Dalje";
+"Get Started" = "Zapocni";

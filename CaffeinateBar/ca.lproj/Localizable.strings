@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Obre CaffeinateBar per iniciar una sessió.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Comprova si Caffeinate manté el teu ordinador actiu.";
+
+"SUPPORT" = "SUPORT";
+"Support CaffeinateBar" = "Dona suport a CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "La teva propina ajuda a continuar millorant CaffeinateBar.";
+"Tip via PayPal" = "Propina amb PayPal";
+"Tips aren't available right now." = "Les propines no estan disponibles ara mateix.";
+"Thank you for your support! ☕️" = "Gracies pel teu suport! ☕️";
+"HELP" = "AJUDA";
+"Show Tutorial" = "Mostra el tutorial";
+"Welcome to CaffeinateBar" = "Benvingut a CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Mantingues el Mac despert directament des de la barra de menus, sense finestres ni desordre.";
+"Choose What Stays Awake" = "Tria que es mante despert";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Obre ASSERTIONS per triar exactament que evita que entri en repos Caffeinate: la pantalla, la inactivitat del sistema, el disc o tot el sistema.";
+"Set an Auto-Stop Timer" = "Configura un temporitzador automatic";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Obre TIMEOUT per fer que Caffeinate s'aturi despres d'un temps definit, sense haver de recordar desactivar-lo.";
+"Check Status From Your Desktop" = "Consulta l'estat des de l'escriptori";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Afegeix el giny de CaffeinateBar per veure l'estat d'un cop d'ull i activar o desactivar Caffeinate directament.";
+"Enjoying CaffeinateBar?" = "T'agrada CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Troba la seccio SUPORT en qualsevol moment per deixar una propina al desenvolupador.";
+"Skip" = "Omet";
+"Next" = "Seguent";
+"Get Started" = "Comenca";

@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Öppna CaffeinateBar för att starta en session.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Se om Caffeinate håller din dator aktiv.";
+
+"SUPPORT" = "STOD";
+"Support CaffeinateBar" = "Stod CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Din dricks hjalper till att fortsatta forbattrandet av CaffeinateBar.";
+"Tip via PayPal" = "Dricks via PayPal";
+"Tips aren't available right now." = "Dricks ar inte tillgangligt just nu.";
+"Thank you for your support! ☕️" = "Tack for ditt stod! ☕️";
+"HELP" = "HJALP";
+"Show Tutorial" = "Visa introduktion";
+"Welcome to CaffeinateBar" = "Valkommen till CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Hall din Mac vaken direkt fran menyraden, utan fonster och utan stök.";
+"Choose What Stays Awake" = "Valj vad som halls vaket";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Oppna ASSERTIONS for att valja exakt vad Caffeinate hindrar fran vila: skarm, systemets inaktivitet, disk eller hela systemet.";
+"Set an Auto-Stop Timer" = "Stall in en automatisk stopptimer";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Oppna TIMEOUT for att lata Caffeinate stanga av sig efter en viss tid.";
+"Check Status From Your Desktop" = "Kontrollera status fran skrivbordet";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Lagg till CaffeinateBar-widgeten for att se status snabbt och sla pa eller av Caffeinate direkt darifran.";
+"Enjoying CaffeinateBar?" = "Gillar du CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Du hittar STOD-avsnittet nar som helst for att ge utvecklaren dricks.";
+"Skip" = "Hoppa over";
+"Next" = "Nasta";
+"Get Started" = "Kom igang";

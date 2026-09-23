@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Bir oturum başlatmak için CaffeinateBar'ı açın.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Caffeinate'in bilgisayarınızı uyanık tutup tutmadığını görün.";
+
+"SUPPORT" = "DESTEK";
+"Support CaffeinateBar" = "CaffeinateBar'ı destekle";
+"Your tip helps keep CaffeinateBar improving." = "Bahsisin CaffeinateBar'ın gelişmeye devam etmesine yardımcı olur.";
+"Tip via PayPal" = "PayPal ile bahşiş ver";
+"Tips aren't available right now." = "Bahşişler şu anda kullanılamıyor.";
+"Thank you for your support! ☕️" = "Desteğin için teşekkürler! ☕️";
+"HELP" = "YARDIM";
+"Show Tutorial" = "Öğreticiyi göster";
+"Welcome to CaffeinateBar" = "CaffeinateBar'a hoş geldin";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Mac'ini doğrudan menü çubuğundan uyanık tut; pencere yok, kalabalık yok.";
+"Choose What Stays Awake" = "Neyin uyanık kalacağını seç";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Caffeinate'ın neyin uyumasını engelleyeceğini seçmek için ASSERTIONS bölümünü aç: ekran, sistem boşta durumu, disk veya tüm sistem.";
+"Set an Auto-Stop Timer" = "Otomatik durdurma zamanlayıcısı ayarla";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Caffeinate'ın belirlenen süreden sonra kendini kapatması için TIMEOUT bölümünü aç.";
+"Check Status From Your Desktop" = "Durumu masaüstünden kontrol et";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Durumu hızlıca görmek ve Caffeinate'ı doğrudan açıp kapatmak için CaffeinateBar widget'ını ekle.";
+"Enjoying CaffeinateBar?" = "CaffeinateBar'ı beğendin mi?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Developera bahşiş bırakmak için istediğin zaman DESTEK bölümünü aç.";
+"Skip" = "Atla";
+"Next" = "İleri";
+"Get Started" = "Başla";

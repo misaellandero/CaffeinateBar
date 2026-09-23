@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Avaa CaffeinateBar aloittaaksesi istunnon.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Tarkista, pitääkö Caffeinate tietokoneesi aktiivisena.";
+
+"SUPPORT" = "TUKI";
+"Support CaffeinateBar" = "Tue CaffeinateBaria";
+"Your tip helps keep CaffeinateBar improving." = "Tippisi auttaa parantamaan CaffeinateBaria.";
+"Tip via PayPal" = "Tippaa PayPalilla";
+"Tips aren't available right now." = "Tipit eivat ole nyt saatavilla.";
+"Thank you for your support! ☕️" = "Kiitos tuestasi! ☕️";
+"HELP" = "OHJE";
+"Show Tutorial" = "Nayta opastus";
+"Welcome to CaffeinateBar" = "Tervetuloa CaffeinateBariin";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Pida Mac hereilla suoraan valikkorivilta, ilman ikkunoita tai sotkua.";
+"Choose What Stays Awake" = "Valitse mita pidetaan hereilla";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Avaa ASSERTIONS ja valitse, mita Caffeinate estaa nukkumasta: naytto, jarjestelman joutokaynti, levy tai koko jarjestelma.";
+"Set an Auto-Stop Timer" = "Aseta automaattinen pysaytysajastin";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Avaa TIMEOUT, jotta Caffeinate sammuu itsestaan maaritetyn ajan jalkeen.";
+"Check Status From Your Desktop" = "Tarkista tila tyopoydalta";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Lisaa CaffeinateBar-widgetti, niin naet tilan yhdella silmayksella ja voit vaihtaa Caffeinaten paalle tai pois suoraan siita.";
+"Enjoying CaffeinateBar?" = "Pidatko CaffeinateBarista?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Avaa TUKI-osio milloin tahansa jattaaksesi tipin kehittajalle.";
+"Skip" = "Ohita";
+"Next" = "Seuraava";
+"Get Started" = "Aloita";

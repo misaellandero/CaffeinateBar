@@ -221,6 +221,7 @@ class CaffeinateManager: ObservableObject {
         let defaults = SharedWidgetState.defaults
         defaults.set(isActive, forKey: SharedWidgetState.isActiveKey)
         defaults.set(Date(), forKey: SharedWidgetState.lastUpdatedKey)
+        defaults.set(timeoutPreset.rawValue, forKey: SharedWidgetState.timeoutPresetKey)
 
         if let startedAt {
             defaults.set(startedAt, forKey: SharedWidgetState.startedAtKey)

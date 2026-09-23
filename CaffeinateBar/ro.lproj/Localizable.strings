@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Deschide CaffeinateBar pentru a porni o sesiune.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Verifică dacă Caffeinate îți menține computerul activ.";
+
+"SUPPORT" = "SUPORT";
+"Support CaffeinateBar" = "Sprijina CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Bacsisul tau ajuta CaffeinateBar sa se imbunatateasca in continuare.";
+"Tip via PayPal" = "Bacsis prin PayPal";
+"Tips aren't available right now." = "Bacsisurile nu sunt disponibile acum.";
+"Thank you for your support! ☕️" = "Multumim pentru sprijin! ☕️";
+"HELP" = "AJUTOR";
+"Show Tutorial" = "Afiseaza tutorialul";
+"Welcome to CaffeinateBar" = "Bun venit la CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Pastreaza Mac-ul activ direct din bara de meniu, fara ferestre si fara aglomeratie.";
+"Choose What Stays Awake" = "Alege ce ramane activ";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Deschide ASSERTIONS pentru a alege exact ce impiedica Caffeinate sa intre in repaus: afisajul, inactivitatea sistemului, discul sau intregul sistem.";
+"Set an Auto-Stop Timer" = "Seteaza un cronometru de oprire automata";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Deschide TIMEOUT pentru ca Caffeinate sa se opreasca singur dupa timpul setat.";
+"Check Status From Your Desktop" = "Verifica starea de pe desktop";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Adauga widgetul CaffeinateBar pentru a vedea rapid starea si a porni sau opri Caffeinate direct de acolo.";
+"Enjoying CaffeinateBar?" = "Iti place CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Gaseste sectiunea SUPORT oricand pentru a lasa un bacsis developerului.";
+"Skip" = "Omite";
+"Next" = "Urmatorul";
+"Get Started" = "Incepe";

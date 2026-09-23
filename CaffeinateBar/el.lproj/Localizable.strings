@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Ανοίξτε το CaffeinateBar για να ξεκινήσετε μια συνεδρία.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Δείτε αν το Caffeinate διατηρεί τον υπολογιστή σας ενεργό.";
+
+"SUPPORT" = "ΥΠΟΣΤΗΡΙΞΗ";
+"Support CaffeinateBar" = "Υποστήριξη του CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Η συνεισφορά σου βοηθά το CaffeinateBar να βελτιώνεται.";
+"Tip via PayPal" = "Συνεισφορά μέσω PayPal";
+"Tips aren't available right now." = "Οι συνεισφορές δεν είναι διαθέσιμες αυτήν τη στιγμή.";
+"Thank you for your support! ☕️" = "Ευχαριστώ για την υποστήριξη! ☕️";
+"HELP" = "ΒΟΗΘΕΙΑ";
+"Show Tutorial" = "Εμφάνιση οδηγού";
+"Welcome to CaffeinateBar" = "Καλώς ήρθες στο CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Κράτησε το Mac ενεργό απευθείας από τη γραμμή μενού, χωρίς παράθυρα και ακαταστασία.";
+"Choose What Stays Awake" = "Επίλεξε τι μένει ενεργό";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Άνοιξε το ASSERTIONS για να επιλέξεις τι εμποδίζει το Caffeinate να μπει σε ύπνο: οθόνη, αδράνεια συστήματος, δίσκος ή όλο το σύστημα.";
+"Set an Auto-Stop Timer" = "Ρύθμιση αυτόματης διακοπής";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Άνοιξε το TIMEOUT ώστε το Caffeinate να απενεργοποιείται μετά από συγκεκριμένο χρόνο.";
+"Check Status From Your Desktop" = "Έλεγχος κατάστασης από την επιφάνεια εργασίας";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Πρόσθεσε το widget CaffeinateBar για να βλέπεις την κατάσταση άμεσα και να ενεργοποιείς ή να απενεργοποιείς το Caffeinate από εκεί.";
+"Enjoying CaffeinateBar?" = "Σου αρέσει το CaffeinateBar;";
+"Find the SUPPORT section any time to leave the developer a tip." = "Βρες την ενότητα ΥΠΟΣΤΗΡΙΞΗ οποιαδήποτε στιγμή για να αφήσεις μια συνεισφορά στον developer.";
+"Skip" = "Παράλειψη";
+"Next" = "Επόμενο";
+"Get Started" = "Έναρξη";

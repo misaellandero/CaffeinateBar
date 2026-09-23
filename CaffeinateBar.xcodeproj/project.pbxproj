@@ -12,12 +12,16 @@
 		A10000012 /* SharedWidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001 /* SharedWidgetState.swift */; };
 		A10000013 /* CaffeinateBarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000002 /* CaffeinateBarWidget.swift */; };
 		A10000014 /* SharedWidgetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000001 /* SharedWidgetState.swift */; };
+		24FBF532B46CE478ED63C7FA /* WidgetIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14A526346A62B3FD5DB175 /* WidgetIntents.swift */; };
 		A10000015 /* CaffeinateBarWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A10000004 /* CaffeinateBarWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10000021 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000023 /* Localizable.strings */; };
 		A10000022 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10000025 /* Localizable.strings */; };
 		CED1CE3B5ED509F3A1554A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77BD7CBBB30C9E9E8438627 /* Assets.xcassets */; };
 		D3D5ECF53AC9BA2CEB9C04E8 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0918686C41373E3A6ED655E6 /* MenuBarView.swift */; };
 		D7A40CD5DA435831E79BFB5C /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D7F01DEACB9A850A33A1EB /* HotkeyManager.swift */; };
+		3FC96055743C326613320440 /* TipJarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10B93FC69EF9CB0A9E6D06B /* TipJarStore.swift */; };
+		0818CB37C041ECE1FC3E6FE3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C8980A9D62D71BA0728709 /* OnboardingView.swift */; };
+		DFD9B9E7D637598BD3ABDCA6 /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A62A10B84EB1A37EA808041 /* OnboardingWindowController.swift */; };
 		E1099528E4EC3260233D8EE7 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBCEDE027E8543C98073BCE4 /* IOKit.framework */; };
 		E1F7DC538684416376E69DFA /* CaffeinateBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */; };
 /* End PBXBuildFile section */
@@ -56,9 +60,13 @@
 		86361E78437A8E7D39BE5949 /* CaffeinateBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarApp.swift; sourceTree = "<group>"; };
 		A10000001 /* SharedWidgetState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWidgetState.swift; sourceTree = "<group>"; };
 		A10000002 /* CaffeinateBarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeinateBarWidget.swift; sourceTree = "<group>"; };
+		1F14A526346A62B3FD5DB175 /* WidgetIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetIntents.swift; sourceTree = "<group>"; };
 		A10000003 /* CaffeinateBarWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CaffeinateBarWidget.entitlements; sourceTree = "<group>"; };
 		A10000004 /* CaffeinateBarWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CaffeinateBarWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D10B93FC69EF9CB0A9E6D06B /* TipJarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarStore.swift; sourceTree = "<group>"; };
+		E4C8980A9D62D71BA0728709 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0A62A10B84EB1A37EA808041 /* OnboardingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWindowController.swift; sourceTree = "<group>"; };
 		A10000027 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A10000028 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A10000024 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000002 /* CaffeinateBarWidget.swift */,
+				1F14A526346A62B3FD5DB175 /* WidgetIntents.swift */,
 				A10000003 /* CaffeinateBarWidget.entitlements */,
 				A10000006 /* Info.plist */,
 				A10000025 /* Localizable.strings */,
@@ -127,6 +136,9 @@
 				A10000023 /* Localizable.strings */,
 				0918686C41373E3A6ED655E6 /* MenuBarView.swift */,
 				A10000001 /* SharedWidgetState.swift */,
+				D10B93FC69EF9CB0A9E6D06B /* TipJarStore.swift */,
+				E4C8980A9D62D71BA0728709 /* OnboardingView.swift */,
+				0A62A10B84EB1A37EA808041 /* OnboardingWindowController.swift */,
 			);
 			path = CaffeinateBar;
 			sourceTree = "<group>";
@@ -280,6 +292,7 @@
 			files = (
 				A10000013 /* CaffeinateBarWidget.swift in Sources */,
 				A10000014 /* SharedWidgetState.swift in Sources */,
+				24FBF532B46CE478ED63C7FA /* WidgetIntents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +306,9 @@
 				D7A40CD5DA435831E79BFB5C /* HotkeyManager.swift in Sources */,
 				D3D5ECF53AC9BA2CEB9C04E8 /* MenuBarView.swift in Sources */,
 				A10000012 /* SharedWidgetState.swift in Sources */,
+				3FC96055743C326613320440 /* TipJarStore.swift in Sources */,
+				0818CB37C041ECE1FC3E6FE3 /* OnboardingView.swift in Sources */,
+				DFD9B9E7D637598BD3ABDCA6 /* OnboardingWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,18 +470,18 @@
 				CODE_SIGN_ENTITLEMENTS = CaffeinateBar/CaffeinateBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 63AJC847ZW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CaffeinateBar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Caffeinate Bat";
+				INFOPLIST_KEY_CFBundleDisplayName = CaffeinateBar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;
@@ -479,7 +495,7 @@
 				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 63AJC847ZW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
@@ -488,8 +504,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -505,7 +521,7 @@
 				CODE_SIGN_ENTITLEMENTS = CaffeinateBarWidget/CaffeinateBarWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 63AJC847ZW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CaffeinateBarWidget/Info.plist;
@@ -514,8 +530,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar.CaffeinateBarWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -531,18 +547,18 @@
 				CODE_SIGN_ENTITLEMENTS = CaffeinateBar/CaffeinateBar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 63AJC847ZW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = CaffeinateBar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Caffeinate Bat";
+				INFOPLIST_KEY_CFBundleDisplayName = CaffeinateBar;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.local.CaffeinateBar;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.9;

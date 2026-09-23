@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Apri CaffeinateBar per avviare una sessione.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Verifica se Caffeinate mantiene attivo il tuo computer.";
+
+"SUPPORT" = "SUPPORTO";
+"Support CaffeinateBar" = "Supporta CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "La tua mancia aiuta a migliorare CaffeinateBar.";
+"Tip via PayPal" = "Mancia tramite PayPal";
+"Tips aren't available right now." = "Le mance non sono disponibili al momento.";
+"Thank you for your support! ☕️" = "Grazie per il supporto! ☕️";
+"HELP" = "AIUTO";
+"Show Tutorial" = "Mostra tutorial";
+"Welcome to CaffeinateBar" = "Benvenuto in CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Mantieni il Mac attivo direttamente dalla barra dei menu, senza finestre e senza confusione.";
+"Choose What Stays Awake" = "Scegli cosa resta attivo";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Apri ASSERTIONS per scegliere cosa Caffeinate impedisce di mandare in stop: display, inattivita del sistema, disco o tutto il sistema.";
+"Set an Auto-Stop Timer" = "Imposta un timer di arresto automatico";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Apri TIMEOUT per fare in modo che Caffeinate si disattivi dopo un tempo stabilito.";
+"Check Status From Your Desktop" = "Controlla lo stato dalla Scrivania";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Aggiungi il widget CaffeinateBar per vedere lo stato al volo e attivare o disattivare Caffeinate direttamente da li.";
+"Enjoying CaffeinateBar?" = "Ti piace CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Trovi la sezione SUPPORTO in qualsiasi momento per lasciare una mancia allo sviluppatore.";
+"Skip" = "Salta";
+"Next" = "Avanti";
+"Get Started" = "Inizia";

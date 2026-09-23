@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Ouvrez CaffeinateBar pour démarrer une session.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Vérifiez si Caffeinate maintient votre ordinateur actif.";
+
+"SUPPORT" = "SOUTIEN";
+"Support CaffeinateBar" = "Soutenir CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Votre pourboire aide a continuer d'ameliorer CaffeinateBar.";
+"Tip via PayPal" = "Pourboire via PayPal";
+"Tips aren't available right now." = "Les pourboires ne sont pas disponibles pour le moment.";
+"Thank you for your support! ☕️" = "Merci pour votre soutien ! ☕️";
+"HELP" = "AIDE";
+"Show Tutorial" = "Afficher le tutoriel";
+"Welcome to CaffeinateBar" = "Bienvenue dans CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Gardez votre Mac eveille directement depuis la barre des menus, sans fenetres ni encombrement.";
+"Choose What Stays Awake" = "Choisissez ce qui reste eveille";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Ouvrez ASSERTIONS pour choisir ce que Caffeinate empeche de se mettre en veille : ecran, inactivite du systeme, disque ou systeme entier.";
+"Set an Auto-Stop Timer" = "Definir un minuteur d'arret automatique";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Ouvrez TIMEOUT pour que Caffeinate se desactive automatiquement apres une duree definie.";
+"Check Status From Your Desktop" = "Verifiez l'etat depuis le bureau";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Ajoutez le widget CaffeinateBar pour voir l'etat d'un coup d'oeil et activer ou desactiver Caffeinate directement depuis celui-ci.";
+"Enjoying CaffeinateBar?" = "Vous aimez CaffeinateBar ?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Retrouvez la section SOUTIEN a tout moment pour laisser un pourboire au developpeur.";
+"Skip" = "Ignorer";
+"Next" = "Suivant";
+"Get Started" = "Commencer";

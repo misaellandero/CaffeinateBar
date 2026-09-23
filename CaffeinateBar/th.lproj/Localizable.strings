@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "เปิด CaffeinateBar เพื่อเริ่มเซสชัน";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "ดูว่า Caffeinate กำลังป้องกันไม่ให้คอมพิวเตอร์ของคุณสลีปหรือไม่";
+
+"SUPPORT" = "สนับสนุน";
+"Support CaffeinateBar" = "สนับสนุน CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "ทิปของคุณช่วยให้ CaffeinateBar พัฒนาต่อไป";
+"Tip via PayPal" = "ให้ทิปผ่าน PayPal";
+"Tips aren't available right now." = "ยังไม่สามารถให้ทิปได้ในตอนนี้";
+"Thank you for your support! ☕️" = "ขอบคุณสำหรับการสนับสนุน! ☕️";
+"HELP" = "ช่วยเหลือ";
+"Show Tutorial" = "แสดงบทแนะนำ";
+"Welcome to CaffeinateBar" = "ยินดีต้อนรับสู่ CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "ทำให้ Mac ของคุณไม่พักเครื่องได้จากแถบเมนูโดยตรง ไม่มีหน้าต่างและไม่รบกวน";
+"Choose What Stays Awake" = "เลือกสิ่งที่จะคงสถานะตื่น";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "เปิด ASSERTIONS เพื่อเลือกสิ่งที่ Caffeinate จะป้องกันไม่ให้พักเครื่อง: จอภาพ ระบบว่าง ดิสก์ หรือทั้งระบบ";
+"Set an Auto-Stop Timer" = "ตั้งเวลาหยุดอัตโนมัติ";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "เปิด TIMEOUT เพื่อให้ Caffeinate ปิดเองหลังเวลาที่กำหนด";
+"Check Status From Your Desktop" = "ตรวจสอบสถานะจากเดสก์ท็อป";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "เพิ่มวิดเจ็ต CaffeinateBar เพื่อดูสถานะอย่างรวดเร็ว และเปิดหรือปิด Caffeinate ได้จากวิดเจ็ต";
+"Enjoying CaffeinateBar?" = "ชอบ CaffeinateBar ไหม?";
+"Find the SUPPORT section any time to leave the developer a tip." = "เปิดส่วนสนับสนุนได้ทุกเมื่อเพื่อให้ทิปแก่นักพัฒนา";
+"Skip" = "ข้าม";
+"Next" = "ถัดไป";
+"Get Started" = "เริ่มต้น";

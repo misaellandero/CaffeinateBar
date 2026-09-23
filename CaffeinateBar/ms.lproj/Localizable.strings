@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Buka CaffeinateBar untuk memulakan sesi.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Lihat sama ada Caffeinate memastikan komputer anda kekal terjaga.";
+
+"SUPPORT" = "SOKONGAN";
+"Support CaffeinateBar" = "Sokong CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Tip anda membantu CaffeinateBar terus ditambah baik.";
+"Tip via PayPal" = "Tip melalui PayPal";
+"Tips aren't available right now." = "Tip tidak tersedia buat masa ini.";
+"Thank you for your support! ☕️" = "Terima kasih atas sokongan anda! ☕️";
+"HELP" = "BANTUAN";
+"Show Tutorial" = "Tunjukkan tutorial";
+"Welcome to CaffeinateBar" = "Selamat datang ke CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Pastikan Mac anda terus aktif terus dari bar menu, tanpa tetingkap dan tanpa serabut.";
+"Choose What Stays Awake" = "Pilih apa yang kekal aktif";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Buka ASSERTIONS untuk memilih perkara yang Caffeinate halang daripada tidur: paparan, melahu sistem, cakera atau seluruh sistem.";
+"Set an Auto-Stop Timer" = "Tetapkan pemasa henti automatik";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Buka TIMEOUT supaya Caffeinate mematikan dirinya selepas masa yang ditetapkan.";
+"Check Status From Your Desktop" = "Semak status dari desktop";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Tambah widget CaffeinateBar untuk melihat status dengan pantas dan menghidupkan atau mematikan Caffeinate terus daripadanya.";
+"Enjoying CaffeinateBar?" = "Suka CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Cari bahagian SOKONGAN pada bila-bila masa untuk meninggalkan tip kepada developer.";
+"Skip" = "Langkau";
+"Next" = "Seterusnya";
+"Get Started" = "Mulakan";

@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Nyissa meg a CaffeinateBar-t egy munkamenet indításához.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Ellenőrizze, hogy a Caffeinate ébren tartja-e a számítógépét.";
+
+"SUPPORT" = "TAMOGATAS";
+"Support CaffeinateBar" = "CaffeinateBar tamogatasa";
+"Your tip helps keep CaffeinateBar improving." = "A borravalod segit a CaffeinateBar tovabbi fejleszteseben.";
+"Tip via PayPal" = "Borravalo PayPalon";
+"Tips aren't available right now." = "A borravalok most nem erhetoek el.";
+"Thank you for your support! ☕️" = "Koszonjuk a tamogatast! ☕️";
+"HELP" = "SUGO";
+"Show Tutorial" = "Utmutato megjelenitese";
+"Welcome to CaffeinateBar" = "Udvozol a CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Tartsd ebren a Maced kozvetlenul a menusorbol, ablakok es zavar nelkul.";
+"Choose What Stays Awake" = "Valaszd ki, mi maradjon ebren";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Nyisd meg az ASSERTIONS reszt, es valaszd ki, mit akadalyozzon meg a Caffeinate az alvasban: kijelzot, rendszer uresjaratat, lemezt vagy a teljes rendszert.";
+"Set an Auto-Stop Timer" = "Automatikus leallitas idozito beallitasa";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Nyisd meg a TIMEOUT reszt, hogy a Caffeinate egy megadott ido utan magatol kikapcsoljon.";
+"Check Status From Your Desktop" = "Allapot ellenorzese az asztalrol";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Add hozza a CaffeinateBar widgetet, hogy gyorsan lasd az allapotot, es kozvetlenul onnan kapcsold be vagy ki a Caffeinate-et.";
+"Enjoying CaffeinateBar?" = "Tetszik a CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "A TAMOGATAS reszben barmikor hagyhatsz borravalot a fejlesztonek.";
+"Skip" = "Kihagyas";
+"Next" = "Kovetkezo";
+"Get Started" = "Kezdes";

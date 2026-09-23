@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "CaffeinateBar öffnen, um eine Sitzung zu starten.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Prüfen, ob Caffeinate Ihren Computer aktiv hält.";
+
+"SUPPORT" = "UNTERSTUTZUNG";
+"Support CaffeinateBar" = "CaffeinateBar unterstutzen";
+"Your tip helps keep CaffeinateBar improving." = "Dein Trinkgeld hilft, CaffeinateBar weiter zu verbessern.";
+"Tip via PayPal" = "Trinkgeld per PayPal";
+"Tips aren't available right now." = "Trinkgelder sind gerade nicht verfugbar.";
+"Thank you for your support! ☕️" = "Danke fur deine Unterstutzung! ☕️";
+"HELP" = "HILFE";
+"Show Tutorial" = "Tutorial anzeigen";
+"Welcome to CaffeinateBar" = "Willkommen bei CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Halte deinen Mac direkt uber die Menuleiste wach, ohne Fenster und ohne Unordnung.";
+"Choose What Stays Awake" = "Wahle aus, was wach bleibt";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Offne ASSERTIONS, um genau festzulegen, was Caffeinate am Ruhezustand hindert: Display, Systemleerlauf, Festplatte oder das ganze System.";
+"Set an Auto-Stop Timer" = "Auto-Stopp-Timer festlegen";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Offne TIMEOUT, damit Caffeinate sich nach einer festgelegten Zeit selbst ausschaltet.";
+"Check Status From Your Desktop" = "Status auf dem Schreibtisch prufen";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Fuge das CaffeinateBar-Widget hinzu, um den Status sofort zu sehen und Caffeinate direkt dort ein- oder auszuschalten.";
+"Enjoying CaffeinateBar?" = "Gefallt dir CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Im Bereich UNTERSTUTZUNG kannst du dem Entwickler jederzeit ein Trinkgeld geben.";
+"Skip" = "Uberspringen";
+"Next" = "Weiter";
+"Get Started" = "Loslegen";

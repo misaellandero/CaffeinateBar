@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "Abra o CaffeinateBar para iniciar uma sessão.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Veja se o Caffeinate está mantendo seu computador ativo.";
+
+"SUPPORT" = "APOIO";
+"Support CaffeinateBar" = "Apoiar CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "Sua gorjeta ajuda o CaffeinateBar a continuar melhorando.";
+"Tip via PayPal" = "Gorjeta pelo PayPal";
+"Tips aren't available right now." = "As gorjetas nao estao disponiveis agora.";
+"Thank you for your support! ☕️" = "Obrigado pelo apoio! ☕️";
+"HELP" = "AJUDA";
+"Show Tutorial" = "Mostrar tutorial";
+"Welcome to CaffeinateBar" = "Bem-vindo ao CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "Mantenha seu Mac acordado direto pela barra de menus, sem janelas e sem bagunca.";
+"Choose What Stays Awake" = "Escolha o que fica acordado";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "Abra ASSERTIONS para escolher exatamente o que o Caffeinate impede de dormir: tela, inatividade do sistema, disco ou o sistema inteiro.";
+"Set an Auto-Stop Timer" = "Defina um temporizador de parada automatica";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Abra TIMEOUT para que o Caffeinate se desligue sozinho depois de um tempo definido.";
+"Check Status From Your Desktop" = "Verifique o status pela mesa";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Adicione o widget do CaffeinateBar para ver o status rapidamente e ligar ou desligar o Caffeinate direto por ele.";
+"Enjoying CaffeinateBar?" = "Curtindo o CaffeinateBar?";
+"Find the SUPPORT section any time to leave the developer a tip." = "Encontre a secao APOIO a qualquer momento para deixar uma gorjeta para o developer.";
+"Skip" = "Pular";
+"Next" = "Proximo";
+"Get Started" = "Comecar";

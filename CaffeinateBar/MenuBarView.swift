@@ -1,3 +1,4 @@
+import StoreKit
 import SwiftUI
 
 // MARK: - Root
@@ -7,6 +8,7 @@ struct MenuBarView: View {
     @AppStorage("sec.assertions") private var assertionsOpen = true
     @AppStorage("sec.timeout")    private var timeoutOpen    = false
     @AppStorage("sec.settings")   private var settingsOpen   = false
+    @AppStorage("sec.support")    private var supportOpen    = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -22,6 +24,9 @@ struct MenuBarView: View {
             Divider()
             accordionSection(title: "SETTINGS", systemImage: "gearshape",
                              isOpen: $settingsOpen)   { settingsContent   }
+            Divider()
+            accordionSection(title: "SUPPORT", systemImage: "heart",
+                             isOpen: $supportOpen)    { supportContent    }
             Divider()
             commandPreview
             Divider()
@@ -227,6 +232,23 @@ struct MenuBarView: View {
             SettingsRow(toggle: $manager.colorIcon,
                 symbol: "paintpalette", title: "Color Icon",
                 tip: "Show a colored icon (green when active) instead of the system default.")
+
+            settingsDivider("HELP")
+
+            Button {
+                NotificationCenter.default.post(name: .showOnboardingRequested, object: nil)
+            } label: {
+                HStack(spacing: 10) {
+                    Image(systemName: "questionmark.circle")
+                        .font(.system(size: 13)).foregroundStyle(.secondary).frame(width: 20)
+                    Text("Show Tutorial").font(.subheadline)
+                    Spacer()
+                }
+                .padding(.horizontal, 14)
+                .padding(.vertical, 6)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
         }
     }
 
@@ -245,6 +267,48 @@ struct MenuBarView: View {
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 4)
+    }
+
+    // MARK: Support ────────────────────────────────────────────────────────
+
+    private var supportContent: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Divider().padding(.horizontal, 14)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Support CaffeinateBar")
+                    .font(.subheadline).fontWeight(.semibold)
+                Text("Your tip helps keep CaffeinateBar improving.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            .padding(.horizontal, 14)
+            .padding(.top, 8)
+            .padding(.bottom, 6)
+
+            if AppDistribution.isAppStoreBuild {
+                TipJarView()
+            } else {
+                Button {
+                    NSWorkspace.shared.open(AppDistribution.directDownloadTipURL)
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "heart.fill")
+                            .font(.system(size: 13))
+                            .foregroundStyle(.pink)
+                            .frame(width: 20)
+                        Text("Tip via PayPal").font(.subheadline)
+                        Spacer()
+                        Image(systemName: "arrow.up.right")
+                            .font(.caption2).foregroundStyle(.tertiary)
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 7)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .padding(.bottom, 4)
+            }
+        }
     }
 
     // MARK: Command preview ────────────────────────────────────────────────
@@ -354,4 +418,73 @@ private struct SettingsRow: View {
 
 #Preview {
     MenuBarView().environmentObject(CaffeinateManager())
+}
+
+// MARK: - TipJarView
+
+private struct TipJarView: View {
+    @StateObject private var store = TipJarStore()
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            if store.isLoading && store.products.isEmpty {
+                ProgressView().controlSize(.small)
+                    .padding(.horizontal, 14).padding(.vertical, 6)
+            } else if store.products.isEmpty {
+                Text("Tips aren't available right now.")
+                    .font(.caption).foregroundStyle(.secondary)
+                    .padding(.horizontal, 14).padding(.bottom, 6)
+            } else {
+                ForEach(store.products) { product in
+                    Button {
+                        Task { await store.purchase(product) }
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "cup.and.saucer.fill")
+                                .font(.system(size: 13))
+                                .foregroundStyle(.orange)
+                                .frame(width: 20)
+                            Text(product.displayName).font(.subheadline)
+                            Spacer()
+                            if isPurchasing(product) {
+                                ProgressView().controlSize(.small)
+                            } else {
+                                Text(product.displayPrice)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 6)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(isAnyPurchaseInFlight)
+                }
+                .padding(.bottom, 2)
+            }
+
+            if case .thankYou = store.purchaseState {
+                Text("Thank you for your support! ☕️")
+                    .font(.caption).foregroundStyle(.green)
+                    .padding(.horizontal, 14).padding(.bottom, 6)
+            }
+            if case .failed(let message) = store.purchaseState {
+                Text(message)
+                    .font(.caption2).foregroundStyle(.red)
+                    .padding(.horizontal, 14).padding(.bottom, 6)
+            }
+        }
+        .task { await store.loadProducts() }
+    }
+
+    private func isPurchasing(_ product: Product) -> Bool {
+        if case .purchasing(let id) = store.purchaseState { return id == product.id }
+        return false
+    }
+
+    private var isAnyPurchaseInFlight: Bool {
+        if case .purchasing = store.purchaseState { return true }
+        return false
+    }
 }

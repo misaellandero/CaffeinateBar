@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "세션을 시작하려면 CaffeinateBar를 여세요.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "Caffeinate가 컴퓨터를 깨어있는 상태로 유지하고 있는지 확인하세요.";
+
+"SUPPORT" = "지원";
+"Support CaffeinateBar" = "CaffeinateBar 지원하기";
+"Your tip helps keep CaffeinateBar improving." = "팁은 CaffeinateBar를 계속 개선하는 데 도움이 됩니다.";
+"Tip via PayPal" = "PayPal로 팁 보내기";
+"Tips aren't available right now." = "지금은 팁을 사용할 수 없습니다.";
+"Thank you for your support! ☕️" = "지원해 주셔서 감사합니다! ☕️";
+"HELP" = "도움말";
+"Show Tutorial" = "튜토리얼 보기";
+"Welcome to CaffeinateBar" = "CaffeinateBar에 오신 것을 환영합니다";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "메뉴 막대에서 바로 Mac을 깨어 있게 유지하세요. 창도 복잡함도 없습니다.";
+"Choose What Stays Awake" = "깨어 있게 할 항목 선택";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "ASSERTIONS를 열어 Caffeinate가 잠자기를 막을 항목을 선택하세요: 디스플레이, 시스템 유휴 상태, 디스크 또는 전체 시스템.";
+"Set an Auto-Stop Timer" = "자동 중지 타이머 설정";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "TIMEOUT을 열면 지정한 시간이 지난 뒤 Caffeinate가 자동으로 꺼집니다.";
+"Check Status From Your Desktop" = "데스크탑에서 상태 확인";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "CaffeinateBar 위젯을 추가해 상태를 한눈에 보고, 바로 Caffeinate를 켜거나 끌 수 있습니다.";
+"Enjoying CaffeinateBar?" = "CaffeinateBar가 마음에 드시나요?";
+"Find the SUPPORT section any time to leave the developer a tip." = "개발자에게 팁을 남기려면 언제든 지원 섹션을 여세요.";
+"Skip" = "건너뛰기";
+"Next" = "다음";
+"Get Started" = "시작하기";

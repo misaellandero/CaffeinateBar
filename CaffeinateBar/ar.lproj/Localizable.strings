@@ -71,3 +71,25 @@
 "Open CaffeinateBar to start a session." = "افتح CaffeinateBar لبدء جلسة.";
 "Caffeinate Bar" = "Caffeinate Bar";
 "See whether Caffeinate is keeping your computer awake." = "تحقق مما إذا كان Caffeinate يبقي كمبيوترك نشطاً.";
+
+"SUPPORT" = "الدعم";
+"Support CaffeinateBar" = "ادعم CaffeinateBar";
+"Your tip helps keep CaffeinateBar improving." = "تساعد مساهمتك في استمرار تحسين CaffeinateBar.";
+"Tip via PayPal" = "أرسل مساهمة عبر PayPal";
+"Tips aren't available right now." = "المساهمات غير متاحة حالياً.";
+"Thank you for your support! ☕️" = "شكراً لدعمك! ☕️";
+"HELP" = "المساعدة";
+"Show Tutorial" = "إظهار الشرح";
+"Welcome to CaffeinateBar" = "مرحباً بك في CaffeinateBar";
+"Keep your Mac awake, right from the menu bar — no windows, no clutter." = "أبقِ جهاز Mac نشطاً من شريط القوائم مباشرة، بلا نوافذ ولا ازدحام.";
+"Choose What Stays Awake" = "اختر ما يبقى نشطاً";
+"Open ASSERTIONS to pick exactly what Caffeinate prevents from sleeping: display, system idle, disk, or the whole system." = "افتح قسم التأكيدات لاختيار ما يمنع Caffeinate دخوله في وضع السكون: الشاشة أو خمول النظام أو القرص أو النظام بالكامل.";
+"Set an Auto-Stop Timer" = "اضبط مؤقت إيقاف تلقائي";
+"Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "افتح قسم المهلة ليوقف Caffeinate نفسه بعد وقت محدد، من دون الحاجة لتذكر إيقافه.";
+"Check Status From Your Desktop" = "تحقق من الحالة من سطح المكتب";
+"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "أضف ودجت CaffeinateBar لرؤية الحالة بسرعة وتشغيل Caffeinate أو إيقافه منها مباشرة.";
+"Enjoying CaffeinateBar?" = "هل يعجبك CaffeinateBar؟";
+"Find the SUPPORT section any time to leave the developer a tip." = "يمكنك فتح قسم الدعم في أي وقت لترك مساهمة للمطور.";
+"Skip" = "تخطي";
+"Next" = "التالي";
+"Get Started" = "ابدأ";

@@ -5,11 +5,12 @@ struct CaffeinateEntry: TimelineEntry {
     let date: Date
     let isActive: Bool
     let startedAt: Date?
+    let hasTimeout: Bool
 }
 
 struct CaffeinateProvider: TimelineProvider {
     func placeholder(in context: Context) -> CaffeinateEntry {
-        CaffeinateEntry(date: Date(), isActive: true, startedAt: Date().addingTimeInterval(-900))
+        CaffeinateEntry(date: Date(), isActive: true, startedAt: Date().addingTimeInterval(-900), hasTimeout: false)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (CaffeinateEntry) -> Void) {
@@ -27,7 +28,8 @@ struct CaffeinateProvider: TimelineProvider {
         return CaffeinateEntry(
             date: Date(),
             isActive: defaults.bool(forKey: SharedWidgetState.isActiveKey),
-            startedAt: defaults.object(forKey: SharedWidgetState.startedAtKey) as? Date
+            startedAt: defaults.object(forKey: SharedWidgetState.startedAtKey) as? Date,
+            hasTimeout: defaults.integer(forKey: SharedWidgetState.timeoutPresetKey) != 0
         )
     }
 }
@@ -37,12 +39,23 @@ struct CaffeinateBarWidgetEntryView: View {
     let entry: CaffeinateEntry
 
     var body: some View {
-        content
-            .widgetURL(SharedWidgetState.launchURL)
-            .widgetBackground()
+        Group {
+            if family == .systemSmall {
+                statusColumn
+            } else {
+                HStack(alignment: .top, spacing: 12) {
+                    statusColumn
+                    Spacer(minLength: 8)
+                    actionColumn
+                }
+            }
+        }
+        .padding()
+        .widgetURL(SharedWidgetState.launchURL)
+        .containerBackground(.background, for: .widget)
     }
 
-    private var content: some View {
+    private var statusColumn: some View {
         VStack(alignment: .leading, spacing: family == .systemSmall ? 10 : 14) {
             HStack(alignment: .center, spacing: 8) {
                 Image(systemName: "cup.and.saucer.fill")
@@ -82,7 +95,31 @@ struct CaffeinateBarWidgetEntryView: View {
                     .lineLimit(2)
             }
         }
-        .padding()
+    }
+
+    // Only the larger family has room for the interactive controls.
+    private var actionColumn: some View {
+        VStack(spacing: 8) {
+            Button(intent: ToggleCaffeinateIntent()) {
+                Image(systemName: entry.isActive ? "stop.fill" : "play.fill")
+                    .font(.system(size: 14, weight: .semibold))
+                    .frame(width: 30, height: 30)
+            }
+            .buttonStyle(.plain)
+            .background(Circle().fill((entry.isActive ? Color.orange : Color.green).opacity(0.15)))
+            .foregroundStyle(entry.isActive ? .orange : .green)
+
+            if entry.isActive && entry.hasTimeout {
+                Button(intent: CancelTimeoutIntent()) {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 12, weight: .semibold))
+                        .frame(width: 30, height: 30)
+                }
+                .buttonStyle(.plain)
+                .background(Circle().fill(Color.secondary.opacity(0.15)))
+                .foregroundStyle(.secondary)
+            }
+        }
     }
 }
 
@@ -103,16 +140,5 @@ struct CaffeinateBarWidget: Widget {
 struct CaffeinateBarWidgetBundle: WidgetBundle {
     var body: some Widget {
         CaffeinateBarWidget()
-    }
-}
-
-private extension View {
-    @ViewBuilder
-    func widgetBackground() -> some View {
-        if #available(macOS 14.0, *) {
-            containerBackground(.background, for: .widget)
-        } else {
-            background(Color(NSColor.windowBackgroundColor))
-        }
     }
 }
