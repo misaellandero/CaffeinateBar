@@ -5,7 +5,6 @@ import IOKit.ps
 import UserNotifications
 import ServiceManagement
 import StoreKit
-import WidgetKit
 
 // MARK: - TimeoutPreset
 
@@ -170,7 +169,6 @@ class CaffeinateManager: ObservableObject {
             process = p
             elapsedSeconds = 0
             isActive = true
-            publishWidgetState(isActive: true, startedAt: Date())
             startTimer()
             postNotification(active: true)
         } catch {
@@ -213,23 +211,7 @@ class CaffeinateManager: ObservableObject {
         let sessionDuration = elapsedSeconds
         isActive = false
         stopTimer()
-        publishWidgetState(isActive: false, startedAt: nil)
         ratingPrompt.recordCompletedSession(duration: sessionDuration)
-    }
-
-    private func publishWidgetState(isActive: Bool, startedAt: Date?) {
-        let defaults = SharedWidgetState.defaults
-        defaults.set(isActive, forKey: SharedWidgetState.isActiveKey)
-        defaults.set(Date(), forKey: SharedWidgetState.lastUpdatedKey)
-        defaults.set(timeoutPreset.rawValue, forKey: SharedWidgetState.timeoutPresetKey)
-
-        if let startedAt {
-            defaults.set(startedAt, forKey: SharedWidgetState.startedAtKey)
-        } else {
-            defaults.removeObject(forKey: SharedWidgetState.startedAtKey)
-        }
-
-        WidgetCenter.shared.reloadTimelines(ofKind: "CaffeinateStatusWidget")
     }
 
     // MARK: Launch at Login

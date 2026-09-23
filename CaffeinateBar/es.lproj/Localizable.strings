@@ -88,7 +88,6 @@
 "Set an Auto-Stop Timer" = "Configura un temporizador automático";
 "Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Abre TEMPORIZADOR para que Caffeinate se desactive solo después de un tiempo determinado, sin que tengas que recordar apagarlo.";
 "Check Status From Your Desktop" = "Consulta el estado desde tu escritorio";
-"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Agrega el widget de CaffeinateBar para ver tu estado de un vistazo, y actívalo o desactívalo directo desde ahí.";
 "Enjoying CaffeinateBar?" = "¿Te gusta CaffeinateBar?";
 "Find the SUPPORT section any time to leave the developer a tip." = "Encuentra la sección APOYAR cuando quieras para dejarle una propina al developer.";
 "Skip" = "Omitir";

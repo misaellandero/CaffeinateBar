@@ -87,7 +87,6 @@
 "Set an Auto-Stop Timer" = "自動停止タイマーを設定";
 "Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "TIMEOUTを開くと、指定時間後にCaffeinateが自動でオフになります。";
 "Check Status From Your Desktop" = "デスクトップから状態を確認";
-"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "CaffeinateBarウィジェットを追加すると、状態をすばやく確認し、そこからCaffeinateのオン/オフを切り替えられます。";
 "Enjoying CaffeinateBar?" = "CaffeinateBarを気に入っていますか？";
 "Find the SUPPORT section any time to leave the developer a tip." = "開発者にチップを送るには、いつでもサポートセクションを開いてください。";
 "Skip" = "スキップ";

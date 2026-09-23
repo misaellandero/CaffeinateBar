@@ -87,7 +87,6 @@
 "Set an Auto-Stop Timer" = "Настройте таймер автоостановки";
 "Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Откройте TIMEOUT, чтобы Caffeinate сам выключался через заданное время.";
 "Check Status From Your Desktop" = "Проверяйте статус с рабочего стола";
-"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Добавьте виджет CaffeinateBar, чтобы быстро видеть статус и включать или выключать Caffeinate прямо из него.";
 "Enjoying CaffeinateBar?" = "Нравится CaffeinateBar?";
 "Find the SUPPORT section any time to leave the developer a tip." = "Раздел ПОДДЕРЖКА доступен в любое время, чтобы оставить донат разработчику.";
 "Skip" = "Пропустить";

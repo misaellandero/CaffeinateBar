@@ -87,7 +87,6 @@
 "Set an Auto-Stop Timer" = "設定自動停止計時器";
 "Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "打開 TIMEOUT，讓 Caffeinate 在指定時間後自動關閉。";
 "Check Status From Your Desktop" = "從桌面查看狀態";
-"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "加入 CaffeinateBar 小工具，一眼查看狀態，並直接從小工具開啟或關閉 Caffeinate。";
 "Enjoying CaffeinateBar?" = "喜歡 CaffeinateBar 嗎？";
 "Find the SUPPORT section any time to leave the developer a tip." = "隨時打開支援區段，給開發者打賞。";
 "Skip" = "略過";

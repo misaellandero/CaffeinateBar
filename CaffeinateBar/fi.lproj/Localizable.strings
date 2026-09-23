@@ -87,7 +87,6 @@
 "Set an Auto-Stop Timer" = "Aseta automaattinen pysaytysajastin";
 "Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Avaa TIMEOUT, jotta Caffeinate sammuu itsestaan maaritetyn ajan jalkeen.";
 "Check Status From Your Desktop" = "Tarkista tila tyopoydalta";
-"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Lisaa CaffeinateBar-widgetti, niin naet tilan yhdella silmayksella ja voit vaihtaa Caffeinaten paalle tai pois suoraan siita.";
 "Enjoying CaffeinateBar?" = "Pidatko CaffeinateBarista?";
 "Find the SUPPORT section any time to leave the developer a tip." = "Avaa TUKI-osio milloin tahansa jattaaksesi tipin kehittajalle.";
 "Skip" = "Ohita";

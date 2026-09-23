@@ -54,6 +54,22 @@ Keep this concise. Record outcomes and decisions, not full chat transcripts.
 - Verification: Rebuilt both schemes — BUILD SUCCEEDED. Confirmed via the DerivedData build output that both `CaffeinateBar.app/Contents/Resources` and the embedded widget's `Resources` now contain all 34 `.lproj` folders (previously 2).
 - Follow-ups: **The already-exported `.asc/artifacts/CaffeinateBar-1.1.pkg` predates this fix and only has en/es baked in — must be rebuilt before submitting to the App Store.**
 
+## 2026-09-23 (Liquid Glass app icon)
+- Date: 2026-09-23
+- Request: "revisa que icono estamos usando se supone debemos usar el icono de ios27" (issue #8).
+- Files changed: `CaffeinateBar.xcodeproj/project.pbxproj` — added `iconApp.icon` to the app target's Resources phase (it was only a file reference, parked in the Frameworks group) and moved its reference to the root group. Removed `CaffeinateBar/Assets.xcassets/iconApp.appiconset` (legacy flat PNGs) and the empty `AppIcon.appiconset`.
+- Decisions: Per Xcode docs ("Creating your app icon using Icon Composer"), the `.icon` must be in the target to be used; Xcode auto-generates fallback icons for pre-Liquid-Glass macOS (app min is 13.0), so the PNG set is no longer needed. `ASSETCATALOG_COMPILER_APPICON_NAME = iconApp` unchanged. Left the duplicate `icon/iconApp.icon` (design source copy) untouched.
+- Verification: Clean Debug build — BUILD SUCCEEDED. `assetutil --info` on `Assets.car` shows `IconImageStack`/`IconGroup` renditions with the `.icon` layers and Aqua/DarkAqua/Tintable appearances (previously 10 flat `icon-*.png` renditions); generated `iconApp.icns` fallback visually checked.
+- Follow-ups: Release pkg must be rebuilt anyway (see localization entry) — it will pick up the new icon.
+
+## 2026-09-23 (GitHub release v1.1.0)
+- Date: 2026-09-23
+- Request: "se termino el develop para 1.1 crea el release en github y el branch" (issue #9).
+- Files changed: committed the pending 1.1 work (widget extension removed, Liquid Glass icon, onboarding widget page removed, right-click opens panel in one-click mode, metadata without widget copy); `.ai/` docs.
+- Decisions: branch `release/1.1` + tag `v1.1.0` from the release commit; artifacts built with `scripts/package-release.sh` + `scripts/create-dmg.sh` (ad-hoc signed, not notarized — same as v1.0.0).
+- Verification: Release build succeeded; artifacts uploaded to the GitHub release.
+- Follow-ups: App Store submission still blocked on `asc auth login`; the `.asc/artifacts` pkg must be rebuilt (predates widget removal + localization fix).
+
 ## Template
 - Date:
 - Request:

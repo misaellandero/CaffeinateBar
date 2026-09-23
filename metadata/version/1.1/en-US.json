@@ -1,6 +1,6 @@
 {
   "marketingUrl": "https://github.com/misaellandero/CaffeinateBar",
-  "promotionalText": "New desktop widget, easier tips, better onboarding, and broader localization for CaffeinateBar.",
+  "promotionalText": "Easier tips, better onboarding, and broader localization for CaffeinateBar.",
   "supportUrl": "https://github.com/misaellandero/CaffeinateBar/issues",
-  "whatsNew": "New desktop widget: check whether CaffeinateBar is keeping your computer awake right from the desktop, with quick controls when there is room.\n\nImproved support: App Store builds now include tip options, while direct-download builds keep the PayPal support link.\n\nSmoother first run: the tutorial can be opened again any time, and the rating prompt now waits until you have completed a real session.\n\nAlso improved localization coverage across the app."
+  "whatsNew": "Improved support: App Store builds now include tip options, while direct-download builds keep the PayPal support link.\n\nSmoother first run: the tutorial can be opened again any time, and the rating prompt now waits until you have completed a real session.\n\nAlso improved localization coverage across the app."
 }

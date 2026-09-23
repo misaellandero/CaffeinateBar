@@ -18,27 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupPopover()
         setupObservers()
         if manager.activateOnLaunch { manager.enable() }
-        consumePendingWidgetAction()
         onboardingWindowController.showIfNeeded()
-    }
-
-    func applicationDidBecomeActive(_ notification: Notification) {
-        consumePendingWidgetAction()
-    }
-
-    // MARK: - Widget Actions
-
-    /// Picks up an action requested from the widget's interactive buttons. `openAppWhenRun`
-    /// on the widget's AppIntent brings this app to the front either at cold launch
-    /// (handled above) or by activating an already-running instance (handled here).
-    private func consumePendingWidgetAction() {
-        guard let action = SharedWidgetState.consumePendingAction() else { return }
-        switch action {
-        case .toggle:
-            manager.toggle()
-        case .cancelTimeout:
-            if manager.isActive { manager.disable(reason: .user) }
-        }
     }
 
     func application(_ application: NSApplication, open urls: [URL]) {
@@ -99,9 +79,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc private func handleClick(_ sender: NSStatusBarButton) {
         guard let event = NSApp.currentEvent else { return }
 
-        // Right-click → quick context menu
+        // In one-click mode, right-click is the escape hatch back to the full panel.
         if event.type == .rightMouseUp {
-            showContextMenu(); return
+            if manager.leftClickToToggle {
+                togglePopover()
+            } else {
+                showContextMenu()
+            }
+            return
         }
 
         // Left-click + toggle mode → just toggle

@@ -87,7 +87,6 @@
 "Set an Auto-Stop Timer" = "Otomatik durdurma zamanlayıcısı ayarla";
 "Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it." = "Caffeinate'ın belirlenen süreden sonra kendini kapatması için TIMEOUT bölümünü aç.";
 "Check Status From Your Desktop" = "Durumu masaüstünden kontrol et";
-"Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it." = "Durumu hızlıca görmek ve Caffeinate'ı doğrudan açıp kapatmak için CaffeinateBar widget'ını ekle.";
 "Enjoying CaffeinateBar?" = "CaffeinateBar'ı beğendin mi?";
 "Find the SUPPORT section any time to leave the developer a tip." = "Developera bahşiş bırakmak için istediğin zaman DESTEK bölümünü aç.";
 "Skip" = "Atla";

@@ -22,9 +22,6 @@ private let onboardingPages: [OnboardingPage] = [
     OnboardingPage(symbol: "clock.fill", tint: .blue,
         title: "Set an Auto-Stop Timer",
         message: "Open TIMEOUT to make Caffeinate turn itself off after a set time — no need to remember to disable it."),
-    OnboardingPage(symbol: "square.grid.2x2.fill", tint: .green,
-        title: "Check Status From Your Desktop",
-        message: "Add the CaffeinateBar widget to see your status at a glance, and toggle Caffeinate on or off right from it."),
     OnboardingPage(symbol: "heart.fill", tint: .pink,
         title: "Enjoying CaffeinateBar?",
         message: "Find the SUPPORT section any time to leave the developer a tip.")
